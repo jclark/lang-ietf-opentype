@@ -1,0 +1,8 @@
+otlangs.js
+iso639.js
+ISO-639-2_utf-8.txt
+map.txt
+*.tmp
+*~
+node_modules
+

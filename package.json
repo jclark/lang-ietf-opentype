@@ -1,0 +1,15 @@
+{
+  "name": "otlang",
+  "version": "0.0.1",
+  "author": {
+    "name": "James Clark",
+    "email": "jjc@jclark.com",
+    "url": "http://www.jclark.com"
+  },
+  "engines": {
+    "node": ">=0.10.22"
+  },
+  "devDependencies": {
+    "language-subtag-registry": "^0.3.1"
+  }
+}
