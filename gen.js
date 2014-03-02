@@ -103,9 +103,9 @@ function shortenIso(m) {
     return m;
 }
     
-var missing = "";
 
 function invert(m) {
+    var missing = "";
     var inv = {};
     for (var ott in m) {
 	if (m.hasOwnProperty(ott)) {
@@ -119,6 +119,8 @@ function invert(m) {
 	    }
 	}
     }
+    if (missing.length > 0)
+	console.error("Missing mappings for:" + missing);
     return inv;
 }
 
@@ -130,6 +132,4 @@ function printMap(m) {
 
 printMap(invert(shortenIso(fixupMap(buildLangsMap(require('./otlangs'))))));
 
-if (missing.length > 0)
-    console.error("Missing mappings for:" + missing);
 
