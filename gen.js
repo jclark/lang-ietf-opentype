@@ -1,74 +1,131 @@
-var registry = require('language-subtag-registry/data/json/registry');
+"use strict";
 
-var langs = require('./otlangs');
+//var registry = require('language-subtag-registry/data/json/registry');
+
 var iso639 = require('./iso639');
 
-function shorten(tag) {
-    return iso639[tag] || tag;
+function buildLangsMap(v) {
+    var map = new LangMap();
+    for (var i = 0; i < v.length; i++) {
+	var entry = v[i];
+	// This will remove a DHV (drepecated) entry
+	if (entry[1].indexOf("deprecated") < 0)
+	    map[entry[1]] = { name: entry[0], iso: entry.slice(2) };
+    }
+    return map;
 }
 
-var overrides = {
-    ary: "MOR", // Moroccan Arabic
-    bai: "BML", // Bamileke (collection)
-    ber: "BBR", // Berber (collection)
-    cfm: "HAL", // Falam Chin (also known as Halam)
-    chp: "CHP", // Chipewyan; prefer to Sayisi
-    crm: "MCR", // Moose Cree; prefer to L-Cree
-    crx: "CRR", // Carrier; prefer to Athapaskan
-    csw: "NCR", // Swampy Cree = N-Cree; prefer to Norway House Cree
-    cwd: "DCR", // Woods Cree; prefer to TH-Cree
-    div: "DIV", // Dhivehi; prefer to DHV (deprecated)
-    ell: "ELL", // Greek; prefer to Polytonic Greek
-    flm: null, // Falam Chin, retired: split into rnl and cfm
-    gle: "IRI", // Irish, prefer to Irish Traditional
-    kat: "KAT", // Georgian, prefer to Khutsuri Georgian
-    kca: "KHK", // Khanty-Kazim (most common dialect of Khanty; prefer to other dialects)
-    krc: "KAR", // Karachay; prefer to Balkar
-    mal: "MLR", // Malaylam reformed; prefer to Malayalam Traditional
-    mol: null,  // Moldavian, now retired
-    nor: "NOR", // Norwegian (macrolanguage)
-    stv: "SIG", // renamed from xst
-    xal: "KLM", // Kalmyk; prefer to Todo
-    xsl: "SSL", // South Slavey; prefer to Athapaskan
-    xst: null,  // Silt'e split into stv and wle
-    zho: null,  // Chinese (handle explicitly)
+function LangMap() { }
+
+LangMap.prototype.add = function (langSys, isoTag) {
+    this.getEntryTags(langSys).push(isoTag);
+    return this;
 };
 
-var usedOtf = { };
-var isoToOtf = {};
+LangMap.prototype.remove = function (langSys, isoTag) {
+    var tags = this.getEntryTags(langSys);
+    var i = tags.indexOf(isoTag);
+    if (i < 0)
+	throw new Error("in entry for " + langSys + " expected ISO tag " + isoTag);
+    tags.splice(i, 1);
+    return this;
+};
 
-var tag;
-for (tag in overrides) {
-    if (overrides[tag] !== null) {
-	isoToOtf[shorten(tag)] = overrides[tag];
-	usedOtf[overrides[tag]] = true;
-    }
+LangMap.prototype.rename = function (langSys, oldIsoTag, newIsoTag) {
+    var tags = this.getEntryTags(langSys);
+    var i = tags.indexOf(oldIsoTag);
+    if (i < 0)
+	throw new Error("in entry for " + langSys + " expected ISO tag " + oldIsoTag);
+    tags[i] = newIsoTag;
+    return this;
+};
+
+LangMap.prototype.getEntryTags = function (langSys) {
+    var entry = this[langSys];
+    if (entry === undefined) 
+	throw new Error('expected entry for ' + langSys);
+    return entry.iso;
 }
 
+// This is before shortening
 
-var i;
-for (i = 0; i < langs.length; i++) {
-    var lang = langs[i];
-    var otf = lang[1];
-    var used = usedOtf[otf] || false;
-    for (var j = 2; j < lang.length; j++) {
-	var iso = lang[j];
-	if (overrides[iso] === undefined) {
-	    var short = shorten(iso);
-	    var prevOtf = isoToOtf[short];
-	    if (prevOtf === undefined) {
-		isoToOtf[short] = otf;
-		used = true;
+function fixupMap(m) {
+    // Deal with out of date tags
+    m.rename("HAL", "flm", "cfm"); // Falam Chin also known as Halam; flm retired
+    m.remove("QIN", "flm");
+    m.rename("SIG", "xst", "stv"); // Silt'e; xst retired
+    m.remove("MOL", "mol"); // Moldavian retired
+    // Add some missing entries
+    m.add("MOR", "ary"); // Moroccan Arabic
+    m.add("BML", "bai"); // Bamileke (collection)
+    m.add("BBR", "ber"); // Berber (collection)
+    m.add("NOR", "nor"); // Norwegian (macrolanguage)
+    // Handle cases where same ISO639 tag is mapped to multiple OT tags,
+    // by removing all but one of the mappings.
+    m.remove("MAL", "mal"); // Malayalam Traditional Orthography; prefer reformed orthography, MLR
+    m.remove("PGR", "ell"); // Polytonic Greek; prefer Greek, ELL, for ell
+    m.remove("IRT", "gle"); // Irish Traditional; prefer Irish, IRI, for gle
+    m.remove("KGE", "kat"); // Khutsuri Georgian; prefer Georgia, KAT, for kat
+    m.remove("BAL", "krc"); // Balkar; prefer Karachay, KAR, for Karachay-Balkar
+    m.remove("TOD", "xal"); // Todo; prefer Kalmyk, KLM, for xal (Kalmyk)
+    // Khanty
+    m.remove("KHS", "kca"); // Khanty-Shurishkar; prefer Khanty-Kazim, KHK, for kca (Khanty)
+    m.remove("KHV", "kca"); // Khanty-Vakhi; prefer Khanty-Kazim, KHK, for kca (Khanty)
+    // Athapaskan
+    m.remove("ATH", "chp"); // Athapaskan; prefer Chipewyan, CHP, for chp (Chipewyan)
+    m.remove("SAY", "chp"); // Sayisi; prefer Chipewyan, CHP, for chp (Chipewyan)
+    m.remove("LCR", "crm"); // L-Cree; prefer Moose Cree, MCR, for crm (Moose Cree)
+    m.remove("ATH", "crx"); // Athapaskan; prefer Carrier, CRR, for crx (Carrier)
+    m.remove("ATH", "caf"); // Athapaskan; prefer Carrier, CRR for caf (Southern Carrier)
+    m.remove("NHC", "csw"); // Norway House Cree; prefer N-Cree, NCR, for csw (Swampy Cree)
+    m.remove("TCR", "cwd"); // TH-Cree; prefer Woods Cree, DCR, for cwd (Woods Cree)
+    m.remove("ATH", "xsl"); // Athapaskan; prefer South Slavey, SSL, for xsl (South Slavey)
+    m.remove("ATH", "scs"); // Athapaskan; prefer Slavey, SLA, for scs (North Slavey)
+    // Handle Chinese specially
+    m.remove("ZHH", "zho"); // Chinese Hong Kong SAR
+    m.remove("ZHP", "zho"); // Chinese Phonetic
+    m.remove("ZHS", "zho"); // Chinese Simplified
+    m.remove("ZHT", "zho"); // Chinese Traditional
+    return m;
+}
+
+function shortenIso(m) {
+    for (var ott in m) {
+	if (m.hasOwnProperty(ott)) {
+	    var v = m[ott].iso;
+	    for (var i = 0; i < v.length; i++) {
+		var t = iso639[v[i]];
+		if (t)
+		    v[i] = t;
 	    }
-	    else
-		console.error('duplicate for %s', iso);
 	}
     }
-    if (!used)
-	console.error('unused %s (%s)', otf, lang[0]);
+    return m;
+}
+    
+function invert(m) {
+    var inv = {};
+    for (var ott in m) {
+	if (m.hasOwnProperty(ott)) {
+	    var v = m[ott].iso;
+	    if (v.length === 0)
+		console.error('no tags for %s', ott);
+	    for (var i = 0; i < v.length; i++) {
+		if (inv[v[i]] !== undefined)
+		    console.error('duplicate for %s', v[i]);
+		inv[v[i]] = ott;
+	    }
+	}
+    }
+    return inv;
 }
 
-var tags = Object.keys(isoToOtf).sort();
+function printMap(m) {
+    var tags = Object.keys(m).sort();
+    for (var i = 0; i < tags.length; i++)
+	console.log('%s %s', tags[i], m[tags[i]]);
+}
 
-for (i = 0; i < tags.length; i++)
-    console.log('%s %s', tags[i], isoToOtf[tags[i]]);
+printMap(invert(shortenIso(fixupMap(buildLangsMap(require('./otlangs'))))));
+
+
