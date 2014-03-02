@@ -103,13 +103,15 @@ function shortenIso(m) {
     return m;
 }
     
+var missing = "";
+
 function invert(m) {
     var inv = {};
     for (var ott in m) {
 	if (m.hasOwnProperty(ott)) {
 	    var v = m[ott].iso;
 	    if (v.length === 0)
-		console.error('no tags for %s', ott);
+		missing += " " + ott;
 	    for (var i = 0; i < v.length; i++) {
 		if (inv[v[i]] !== undefined)
 		    console.error('duplicate for %s', v[i]);
@@ -128,4 +130,6 @@ function printMap(m) {
 
 printMap(invert(shortenIso(fixupMap(buildLangsMap(require('./otlangs'))))));
 
+if (missing.length > 0)
+    console.error("Missing mappings for:" + missing);
 
