@@ -22,6 +22,11 @@ LangMap.prototype.add = function (langSys, isoTag) {
     return this;
 };
 
+LangMap.prototype.removeAll = function (langSys) {
+    this.getEntryTags(langSys).length = 0;
+    return this;
+}
+
 LangMap.prototype.remove = function (langSys, isoTag) {
     var tags = this.getEntryTags(langSys);
     var i = tags.indexOf(isoTag);
@@ -50,9 +55,12 @@ LangMap.prototype.getEntryTags = function (langSys) {
 // This is before shortening
 
 function fixupMap(m) {
+    // Get rid of long mappings for ATH and QIN
+    m.removeAll("ATH").removeAll("QIN");
     // Deal with out of date tags
     m.rename("HAL", "flm", "cfm"); // Falam Chin also known as Halam; flm retired
-    m.remove("QIN", "flm");
+    if (false)			   // We remove all of QIN mappings above
+	m.remove("QIN", "flm");
     m.rename("SIG", "xst", "stv"); // Silt'e; xst retired
     m.remove("MOL", "mol"); // Moldavian retired
     // Add some missing entries
@@ -60,6 +68,11 @@ function fixupMap(m) {
     m.add("BML", "bai"); // Bamileke (collection)
     m.add("BBR", "ber"); // Berber (collection)
     m.add("NOR", "nor"); // Norwegian (macrolanguage)
+    m.add("ATH", "ath"); // Athapascan languages (collection)
+    // In Ethnologue, there are about 30 Chin languages in the group
+    // Sino-Tibetan/Tibeto-Burman/Sal/Kuki-Chin-Naga/Kuki-Chin
+    // The most precise group for which there is a ISO639-5 code is Tibeto-Burman, thus
+    m.add("QIN", "tbq"); // Tibeto-Burman languages (collection)
     // Handle cases where same ISO639 tag is mapped to multiple OT tags,
     // by removing all but one of the mappings.
     m.remove("MAL", "mal"); // Malayalam Traditional Orthography; prefer reformed orthography, MLR
@@ -72,15 +85,18 @@ function fixupMap(m) {
     m.remove("KHS", "kca"); // Khanty-Shurishkar; prefer Khanty-Kazim, KHK, for kca (Khanty)
     m.remove("KHV", "kca"); // Khanty-Vakhi; prefer Khanty-Kazim, KHK, for kca (Khanty)
     // Athapaskan
-    m.remove("ATH", "chp"); // Athapaskan; prefer Chipewyan, CHP, for chp (Chipewyan)
     m.remove("SAY", "chp"); // Sayisi; prefer Chipewyan, CHP, for chp (Chipewyan)
     m.remove("LCR", "crm"); // L-Cree; prefer Moose Cree, MCR, for crm (Moose Cree)
-    m.remove("ATH", "crx"); // Athapaskan; prefer Carrier, CRR, for crx (Carrier)
-    m.remove("ATH", "caf"); // Athapaskan; prefer Carrier, CRR for caf (Southern Carrier)
     m.remove("NHC", "csw"); // Norway House Cree; prefer N-Cree, NCR, for csw (Swampy Cree)
     m.remove("TCR", "cwd"); // TH-Cree; prefer Woods Cree, DCR, for cwd (Woods Cree)
-    m.remove("ATH", "xsl"); // Athapaskan; prefer South Slavey, SSL, for xsl (South Slavey)
-    m.remove("ATH", "scs"); // Athapaskan; prefer Slavey, SLA, for scs (North Slavey)
+    // We remove all ATH mappings above
+    if (false) {
+	m.remove("ATH", "chp"); // Athapaskan; prefer Chipewyan, CHP, for chp (Chipewyan)
+	m.remove("ATH", "crx"); // Athapaskan; prefer Carrier, CRR, for crx (Carrier)
+	m.remove("ATH", "caf"); // Athapaskan; prefer Carrier, CRR for caf (Southern Carrier)
+	m.remove("ATH", "xsl"); // Athapaskan; prefer South Slavey, SSL, for xsl (South Slavey)
+	m.remove("ATH", "scs"); // Athapaskan; prefer Slavey, SLA, for scs (North Slavey)
+    }
     // Handle Chinese specially
     m.remove("ZHH", "zho"); // Chinese Hong Kong SAR
     m.remove("ZHP", "zho"); // Chinese Phonetic
