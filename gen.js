@@ -4,6 +4,10 @@
 
 var iso639 = require('./iso639');
 
+// Moldavian has been retired, so the shortening isn't in the official map,
+// but we keep it since we still have a MOL entry
+iso639["mol"] = "mo";
+
 function buildLangsMap(v) {
     var map = new LangMap();
     for (var i = 0; i < v.length; i++) {
@@ -62,7 +66,10 @@ function fixupMap(m) {
     if (false)			   // We remove all of QIN mappings above
 	m.remove("QIN", "flm");
     m.rename("SIG", "xst", "stv"); // Silt'e; xst retired
-    m.remove("MOL", "mol"); // Moldavian retired
+    // We're keeping it, but adding a short mapping
+    if (false) {
+	m.remove("MOL", "mol"); // Moldavian retired
+    }
     // Add some missing entries
     m.add("MOR", "ary"); // Moroccan Arabic
     m.add("BML", "bai"); // Bamileke (collection)
