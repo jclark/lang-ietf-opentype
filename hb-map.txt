@@ -507,7 +507,7 @@ vo VOL
 vro VRO
 wa WLN
 war WAR
-wbm WA 
+wbm WA
 wbr WAG
 wle SIG
 wo WLF
