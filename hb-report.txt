@@ -1,0 +1,14 @@
+"ber" should be mapped to BBR not BER
+
+There's a duplicate entry for "hz" not in sort order
+
+The entries for "sck", "vls", "wo" are not in sort order
+
+The tag for "tmh" is in lower case instead of upper case
+
+Lost zeros: kab -> KAB0, ksh -> KSH0, kg -> KON0, pap -> PAP0, sn -> SNA0
+http://mpeg.chiariglione.org/standards/mpeg-4/open-font-format/text-wd-isoiec-14496-22-3rd-edition
+
+
+
+

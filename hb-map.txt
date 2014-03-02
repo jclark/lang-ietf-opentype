@@ -39,7 +39,7 @@ bcl BIK
 bcq BCH
 be BEL
 bem BEM
-ber BER
+ber BBR
 bfq BAD
 bft BLT
 bfy BAG
@@ -183,7 +183,6 @@ ht HAI
 hu HUN
 hy HYE
 hz HER
-hz HER
 ia INA
 ibb IBB
 id IND
@@ -205,7 +204,7 @@ jbo JBO
 jv JAV
 ka KAT
 kaa KRK
-kab KAB
+kab KAB0
 kam KMB
 kar KRN
 kbd KAB
@@ -215,7 +214,7 @@ kdt KUY
 kex KKN
 kfr KAC
 kfy KMN
-kg KON
+kg KON0
 kha KSI
 khb XBD
 kht KHN
@@ -244,7 +243,7 @@ kri KRI
 krl KRL
 kru KUU
 ks KSH
-ksh KSH
+ksh KSH0
 ksw KSW
 ku KUR
 kum KUM
@@ -371,7 +370,7 @@ os OSS
 pa PAN
 pag PAG
 pam PAM
-pap PAP
+pap PAP0
 pcc PCC
 pcd PCD
 pce PLG
@@ -437,7 +436,7 @@ sma SSM
 smj LSM
 smn ISM
 sms SKS
-sn SNA
+sn SNA0
 snk SNK
 so SML
 sop SOP
@@ -475,7 +474,7 @@ tig TGR
 tiv TIV
 tk TKM
 tl TGL
-tmh tmh
+tmh TMH
 tn TNA
 to TGN
 tpi TPI
