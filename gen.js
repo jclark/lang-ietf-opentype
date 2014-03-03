@@ -76,7 +76,8 @@ function fixupMap(m) {
     m.add("BBR", "ber"); // Berber (collection)
     m.add("NOR", "nor"); // Norwegian (macrolanguage)
     m.add("ATH", "ath"); // Athapascan languages (collection)
-    m.add("TOD", "xwo"); // Todo (written Oirat)
+    // Todo; prefer Kalmyk, KLM, for xal (Kalmyk); use written Oirat instead
+    m.remove("TOD", "xal").add("TOD", "xwo");
     // In Ethnologue, there are about 30 Chin languages in the group
     // Sino-Tibetan/Tibeto-Burman/Sal/Kuki-Chin-Naga/Kuki-Chin
     // The most precise group for which there is a ISO639-5 code is Tibeto-Burman, thus
@@ -88,7 +89,6 @@ function fixupMap(m) {
     m.remove("IRT", "gle"); // Irish Traditional; prefer Irish, IRI, for gle
     m.remove("KGE", "kat"); // Khutsuri Georgian; prefer Georgia, KAT, for kat
     m.remove("BAL", "krc"); // Balkar; prefer Karachay, KAR, for Karachay-Balkar
-    m.remove("TOD", "xal"); // Todo; prefer Kalmyk, KLM, for xal (Kalmyk)
     // Khanty
     m.remove("KHS", "kca"); // Khanty-Shurishkar; prefer Khanty-Kazim, KHK, for kca (Khanty)
     m.remove("KHV", "kca"); // Khanty-Vakhi; prefer Khanty-Kazim, KHK, for kca (Khanty)
