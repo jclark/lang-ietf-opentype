@@ -1,14 +1,134 @@
-"ber" should be mapped to BBR not BER
+"ber" should be mapped to BBR not BER.
 
-There's a duplicate entry for "hz" not in sort order
+There's a duplicate entry for "hz" not in sort order.
 
-The entries for "sck", "vls", "wo" are not in sort order
+The entries for "sck", "vls", "wo" are not in sort order.
 
-The tag for "tmh" is in lower case instead of upper case
+The tag for "tmh" is in lower case instead of upper case.
 
-Lost zeros: kab -> KAB0, ksh -> KSH0, kg -> KON0, pap -> PAP0, sn -> SNA0
+Some tags are missing a final zero. Recent drafts of the OpenType spec
+-- I found a WD for the next edition of the ISO spec
 http://mpeg.chiariglione.org/standards/mpeg-4/open-font-format/text-wd-isoiec-14496-22-3rd-edition
+-- add some 4-character tags, whose last character is a zero.  There
+are four cases where these have been added, but the final zero was
+incorrectly omitted: kab -> KAB0, ksh -> KSH0, kg -> KON0, pap ->
+PAP0, sn -> SNA0.
 
 
+/*{"ahg/awn/xan?",	HB_TAG('A','G','W',' ')},*/	/* Agaw */
+
+Map all of ahg/awn/xan.
+
+/*{"gsw?/gsw-FR?",	HB_TAG('A','L','S',' ')},*/	/* Alsatian */
+/*{"krc",	HB_TAG('B','A','L',' ')},*/	/* Balkar */
+
+Leave unmapped.
+
+/*{"??",	HB_TAG('B','C','R',' ')},*/	/* Bible Cree */
+
+Leave unmapped.
+
+/*{"zh?",	HB_TAG('C','H','N',' ')},*/	/* Chinese (seen in Microsoft fonts) */
+/*{"acf/gcf?",	HB_TAG('F','A','N',' ')},*/	/* French Antillean */
+/*{"enf?/yrk?",	HB_TAG('F','N','E',' ')},*/	/* Forest Nenets */
+/*{"fuf?",	HB_TAG('F','T','A',' ')},*/	/* Futa */
+/*{"ar-Syrc?",	HB_TAG('G','A','R',' ')},*/	/* Garshuni */
+
+"ar-Syrc"
+
+/*{"cfm/rnl?",	HB_TAG('H','A','L',' ')},*/	/* Halam */
+/*{"fonipa",	HB_TAG('I','P','P','H')},*/	/* Phonetic transcription—IPA conventions */
+
+und-fonipa, or better map anything with a variant of "fonipa".
+
+/*{"ga-Latg?/Latg?",	HB_TAG('I','R','T',' ')},*/	/* Irish Traditional */
+
+/*{"krc",	HB_TAG('K','A','R',' ')},*/	/* Karachay */
+
+"krc"
+
+/*{"alw?/ktb?",	HB_TAG('K','E','B',' ')},*/	/* Kebena */
+/*{"Geok",	HB_TAG('K','G','E',' ')},*/	/* Khutsuri Georgian */
+
+"ka-Geok" (Georgian written with the Khutsuri script.
+
+/*{"kca",	HB_TAG('K','H','K',' ')},*/	/* Khanty-Kazim */
+
+"kca"
+
+/*{"kca",	HB_TAG('K','H','S',' ')},*/	/* Khanty-Shurishkar */
+
+Leave unmapped.
+
+/*{"kca",	HB_TAG('K','H','V',' ')},*/	/* Khanty-Vakhi */
+
+Leave unmapped.
+
+/*{"guz?/kqs?/kss?",	HB_TAG('K','I','S',' ')},*/	/* Kisii */
+/*{"kfa/kfi?/kpb?/xua?/xuj?",	HB_TAG('K','O','D',' ')},*/	/* Kodagu */
+/*{"okm?/oko?",	HB_TAG('K','O','H',' ')},*/	/* Korean Old Hangul */
+/*{"kon?/ktu?/...",	HB_TAG('K','O','N',' ')},*/	/* Kikongo */
+/*{"kfx?",	HB_TAG('K','U','L',' ')},*/	/* Kulvi */
+/*{"??",	HB_TAG('L','A','H',' ')},*/	/* Lahuli */
+/*{"??",	HB_TAG('L','C','R',' ')},*/	/* L-Cree */
+
+Leave unmapped.
+
+/*{"??",	HB_TAG('M','A','L',' ')},*/	/* Malayalam Traditional */
+
+Leave unmapped.
+
+/*{"mnk?/mlq?/...",	HB_TAG('M','L','N',' ')},*/	/* Malinke */
+
+"mlq"
+
+/*{"??",	HB_TAG('N','C','R',' ')},*/	/* N-Cree */
+
+"csw"
+
+/*{"??",	HB_TAG('N','H','C',' ')},*/	/* Norway House Cree */
+
+Leave unmapped
+
+/*{"jpa?/sam?",	HB_TAG('P','A','A',' ')},*/	/* Palestinian Aramaic */
+/*{"polyton",	HB_TAG('P','G','R',' ')},*/	/* Polytonic Greek */
+
+"el-polyton"
+
+/*{"??",	HB_TAG('Q','I','N',' ')},*/	/* Asho Chin */
+
+"tbq"
+
+(The spec says Chin not Asho Chin.)
+
+/*{"??",	HB_TAG('R','C','R',' ')},*/	/* R-Cree */
+
+"atj"
+
+/*{"chp?",	HB_TAG('S','A','Y',' ')},*/	/* Sayisi */
+
+Leave unmapped.
+
+/*{"xan?",	HB_TAG('S','E','K',' ')},*/	/* Sekota */
+/*{"ngo?",	HB_TAG('S','X','T',' ')},*/	/* Sutu */
+/*{"??",	HB_TAG('T','C','R',' ')},*/	/* TH-Cree */
+
+Leave unmapped.
+
+/*{"tnz?/tog?/toi?",	HB_TAG('T','N','G',' ')},*/	/* Tonga */
+/*{"enh?/yrk?",	HB_TAG('T','N','E',' ')},*/	/* Tundra Nenets */
+/*{"??",	HB_TAG('W','C','R',' ')},*/	/* West-Cree */
+
+Leave unmapped
+
+/*{"cre?",	HB_TAG('Y','C','R',' ')},*/	/* Y-Cree */
+
+"crk"
+
+/*{"??",	HB_TAG('Y','I','C',' ')},*/	/* Yi Classic */
+/*{"ii?/Yiii?",	HB_TAG('Y','I','M',' ')},*/	/* Yi Modern */
+/*{"??",	HB_TAG('Z','H','P',' ')},*/	/* Chinese Phonetic */
+
+"zh-Latn"
 
 
