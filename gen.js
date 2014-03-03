@@ -76,6 +76,7 @@ function fixupMap(m) {
     m.add("BBR", "ber"); // Berber (collection)
     m.add("NOR", "nor"); // Norwegian (macrolanguage)
     m.add("ATH", "ath"); // Athapascan languages (collection)
+    m.add("TOD", "xwo"); // Todo (written Oirat)
     // In Ethnologue, there are about 30 Chin languages in the group
     // Sino-Tibetan/Tibeto-Burman/Sal/Kuki-Chin-Naga/Kuki-Chin
     // The most precise group for which there is a ISO639-5 code is Tibeto-Burman, thus
