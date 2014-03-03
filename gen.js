@@ -109,6 +109,12 @@ function fixupMap(m) {
     m.remove("ZHP", "zho"); // Chinese Phonetic
     m.remove("ZHS", "zho"); // Chinese Simplified
     m.remove("ZHT", "zho"); // Chinese Traditional
+
+    // Wait till we have resolved divergences from HB before adding these.
+    if (false) {
+	m.add("AGW", "awn").add("AGW", "ahg").add("AGW", "xan");
+	m.remove("WCR", "crk").add("YCR", "crk");
+    }
     return m;
 }
 
@@ -125,7 +131,6 @@ function shortenIso(m) {
     }
     return m;
 }
-    
 
 function invert(m) {
     var missing = "";
@@ -154,5 +159,3 @@ function printMap(m) {
 }
 
 printMap(invert(shortenIso(fixupMap(buildLangsMap(require('./otlangs'))))));
-
-
