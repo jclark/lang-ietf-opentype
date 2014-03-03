@@ -115,6 +115,11 @@ function fixupMap(m) {
     if (false) {
 	m.add("AGW", "awn").add("AGW", "ahg").add("AGW", "xan");
 	m.remove("WCR", "crk").add("YCR", "crk");
+	m.add("FAN", "gcf");
+	m.remove("FNE", "enf");
+	m.rename("KEB", "ktb", "alw");
+	m.removeAll("KIS").add("KIS", "guz");
+	m.rename("TNE", "enh", "yrk");
     }
     return m;
 }

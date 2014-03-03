@@ -20,6 +20,9 @@ PAP0, sn -> SNA0.
 Map all of "ahg", "awn", "xan".
 
 /*{"gsw?/gsw-FR?",	HB_TAG('A','L','S',' ')},*/	/* Alsatian */
+
+"gsw"
+
 /*{"krc",	HB_TAG('B','A','L',' ')},*/	/* Balkar */
 
 Leave unmapped.
@@ -29,9 +32,21 @@ Leave unmapped.
 Leave unmapped.
 
 /*{"zh?",	HB_TAG('C','H','N',' ')},*/	/* Chinese (seen in Microsoft fonts) */
+
+???
+
 /*{"acf/gcf?",	HB_TAG('F','A','N',' ')},*/	/* French Antillean */
+
+"acf" and "gcf"
+
 /*{"enf?/yrk?",	HB_TAG('F','N','E',' ')},*/	/* Forest Nenets */
+
+Leave unmapped.
+
 /*{"fuf?",	HB_TAG('F','T','A',' ')},*/	/* Futa */
+
+"fuf"
+
 /*{"ar-Syrc?",	HB_TAG('G','A','R',' ')},*/	/* Garshuni */
 
 "ar-Syrc"
@@ -53,6 +68,9 @@ Leave unmapped.
 "krc"
 
 /*{"alw?/ktb?",	HB_TAG('K','E','B',' ')},*/	/* Kebena */
+
+"alw"
+
 /*{"Geok",	HB_TAG('K','G','E',' ')},*/	/* Khutsuri Georgian */
 
 "ka-Geok" (Georgian written with the Khutsuri script.
@@ -70,6 +88,9 @@ Leave unmapped.
 Leave unmapped.
 
 /*{"guz?/kqs?/kss?",	HB_TAG('K','I','S',' ')},*/	/* Kisii */
+
+"guz"
+
 /*{"kfa/kfi?/kpb?/xua?/xuj?",	HB_TAG('K','O','D',' ')},*/	/* Kodagu */
 /*{"okm?/oko?",	HB_TAG('K','O','H',' ')},*/	/* Korean Old Hangul */
 /*{"kon?/ktu?/...",	HB_TAG('K','O','N',' ')},*/	/* Kikongo */
@@ -122,6 +143,9 @@ Leave unmapped.
 
 /*{"tnz?/tog?/toi?",	HB_TAG('T','N','G',' ')},*/	/* Tonga */
 /*{"enh?/yrk?",	HB_TAG('T','N','E',' ')},*/	/* Tundra Nenets */
+
+"yrk"
+
 /*{"??",	HB_TAG('W','C','R',' ')},*/	/* West-Cree */
 
 Leave unmapped.

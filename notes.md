@@ -38,6 +38,13 @@ Ethnologue includes alternate names of *Western Agaw* for **ahg**, of
 **byn**. However, Wikipedia, gives an alternate name of *South Agaw*
 for **awn**.
 
+## ALS
+
+Alsatian. Confirm **gsw**.
+
+See [Wikipedia](http://en.wikipedia.org/wiki/Alsatian_language).
+Alsatian is one of the names associated with **gsw**.
+
 ## APPH
 
 Phonetic transcription - Americanist conventions. Confirm *unmapped*.
@@ -91,6 +98,33 @@ Divehi. Remove **div**.
 
 This is deprecated in the spec in favour of DIV.
 
+## FAN
+
+French Antillean. Add **gcf** (Guadeloupean Creole French) to **acf**
+(Santa Lucian Creole French).
+
+**acf** (Saint Lucia Creole French) has an alternate name of Lesser Antillean Creole French.
+The French-associated islands in the Antilles are in the Lesser Antilles.
+
+[Wikipedia](http://en.wikipedia.org/wiki/Antillean_Creole_French) also
+includes **gcf* in Antillean Creole French. It also mentions **scf**
+(San Miguel Creole French) but is nearly extinct and spoken in Panama
+(which is not part of the Antilles). Ethnologue also mentions **gcr**
+(Guianese Creole French).
+
+## FNE
+
+Forest Nenets. Remove **enf** (Forest Enets).
+
+See TNE (Tundra Nenets).
+
+## FUF
+
+Futa. Confirm **fuf** (Pular).
+
+Alternate names of [Pular](http://www.ethnologue.com/language/fuf) are
+*Futa Fula* and *Futa Jallon*. Not sure what else *Futa* could mean.
+
 ## GAR
 
 Garshuni. Add **ar-Syrc** (Arabic/Syriac script).
@@ -135,6 +169,17 @@ Karachay. Confirm as **krc** (Karachay-Balkar)
 
 Prefer KRC to BAL for **krc** on the basis of the tag name.
 
+## KEB
+
+Kebena. Rename **ktb** (Kambaata) to **alw** (Alaba-K'abeena).
+
+Kebena (which can alternatively be spelled Qebena, Qabena or K'abena)
+[used to be
+classified](http://archive.ethnologue.com/15/show_language.asp?code=ktb)
+as a dialect of Kambaata, but is [now
+classified](http://www.ethnologue.com/language/alw) as a separate
+language.
+
 ## KGE
 
 Khutsuri Georgian. Qualify as **ka-Geok** (Georgian/Khutsuri script).
@@ -160,6 +205,15 @@ See KHK.
 Khanty-Vakhi. Remove duplicate **kca** (Kanty).
 
 See KHK.
+
+## KIS
+
+Kisii. Remove "kqs" (Northern Kissi). Remove "kss" (Southern Kisi). Add "guz" (Gusii).
+
+Kisi (with one *i*) isn't the same as Kisii (with two *i*s).
+
+[Kisii](http://en.wikipedia.org/wiki/Gusii_language) is another name for Gusii, which has
+about 2 million speakers.
 
 ## LCR
 
@@ -305,6 +359,25 @@ U+15A7-U+15AE). The Languagegeek website
 syllabics with a macron to indicate the /ð/ sound." The syllabics with
 a macron correspond to the Unicode characters that use the term
 *Woods-Cree*.  So it looks like there are two variants here.
+
+## TNE
+
+Tundra Nenets. Remove **enh** (Tundra Enets). Add **yrk** (Nenets).
+
+There is **yrk** (Nenets) and **enh** (Tundra Enets).
+[Enets](http://en.wikipedia.org/wiki/Enets_language) and
+[Nenets](http://en.wikipedia.org/wiki/Nenets_languages) are [different
+languages](http://www.ethnologue.com/subgroups/northern-samoyed).
+[Nenets](http://www.ethnologue.com/language/yrk) is also called Yurak
+and has dialects *Forest Yurak* and *Tundra Yurak*. So [Tundra
+Nenets](http://en.wikipedia.org/wiki/Tundra_Nenets_language) is the
+same as Tundra Yurak, and is a dialect of Nenets.
+
+The only available code is **yrk** for Nenets.  Tundra Nenets has a
+literary tradition and is spoken much more widely than Forest Nenets,
+so it seems better to map **yrk** to Tundra Nenets rather than Forest
+Nenets.
+
 
 ## TOD
 
