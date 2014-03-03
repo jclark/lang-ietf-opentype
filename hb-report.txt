@@ -17,7 +17,7 @@ PAP0, sn -> SNA0.
 
 /*{"ahg/awn/xan?",	HB_TAG('A','G','W',' ')},*/	/* Agaw */
 
-Map all of ahg/awn/xan.
+Map all of "ahg", "awn", "xan".
 
 /*{"gsw?/gsw-FR?",	HB_TAG('A','L','S',' ')},*/	/* Alsatian */
 /*{"krc",	HB_TAG('B','A','L',' ')},*/	/* Balkar */
@@ -37,11 +37,16 @@ Leave unmapped.
 "ar-Syrc"
 
 /*{"cfm/rnl?",	HB_TAG('H','A','L',' ')},*/	/* Halam */
+
+"cfm"
+
 /*{"fonipa",	HB_TAG('I','P','P','H')},*/	/* Phonetic transcription—IPA conventions */
 
-und-fonipa, or better map anything with a variant of "fonipa".
+"und-fonipa", or better map anything with a variant of "fonipa".
 
 /*{"ga-Latg?/Latg?",	HB_TAG('I','R','T',' ')},*/	/* Irish Traditional */
+
+"ga-Latg"
 
 /*{"krc",	HB_TAG('K','A','R',' ')},*/	/* Karachay */
 
@@ -119,16 +124,23 @@ Leave unmapped.
 /*{"enh?/yrk?",	HB_TAG('T','N','E',' ')},*/	/* Tundra Nenets */
 /*{"??",	HB_TAG('W','C','R',' ')},*/	/* West-Cree */
 
-Leave unmapped
+Leave unmapped.
 
 /*{"cre?",	HB_TAG('Y','C','R',' ')},*/	/* Y-Cree */
 
 "crk"
 
 /*{"??",	HB_TAG('Y','I','C',' ')},*/	/* Yi Classic */
+
+Leave unmapped.
+
 /*{"ii?/Yiii?",	HB_TAG('Y','I','M',' ')},*/	/* Yi Modern */
+
+"ii"
+
+Would also be desirable to map anything in the Yi script (ie anything
+with a script code of Yiii) to YIM.
+
 /*{"??",	HB_TAG('Z','H','P',' ')},*/	/* Chinese Phonetic */
 
 "zh-Latn"
-
-

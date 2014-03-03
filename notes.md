@@ -40,7 +40,10 @@ for **awn**.
 
 ## APPH
 
-Phonetic transcription - Americanist conventions. *todo*
+Phonetic transcription - Americanist conventions. Confirm *unmapped*.
+
+There is no tag corresponding to the [Americanist Phonetic
+Alphabet](http://en.wikipedia.org/wiki/Americanist_phonetic_notation).
 
 ## ATH
 
@@ -82,6 +85,12 @@ Bamileke. Add **bai** (Bamileke languages).
 
 **bai** is a collection tag.
 
+## DHV
+
+Divehi. Remove **div**.
+
+This is deprecated in the spec in favour of DIV.
+
 ## GAR
 
 Garshuni. Add **ar-Syrc** (Arabic/Syriac script).
@@ -115,9 +124,10 @@ variant subtag of **fonipa** to IPPH.
 
 ## IRT
 
-Irish Traditional. Remove duplicate **gle**.
+Irish Traditional. Qualify as **ga-Latg** (Irish/Latin script, Gaelic variant).
 
-XXX *Can we do better? Maybe ga-Latg?*
+Traditional Irish typesetting uses the [Gaelic
+script](http://en.wikipedia.org/wiki/Gaelic_type).
 
 ## KAR
 
@@ -212,7 +222,10 @@ http://www.languagegeek.com/algon/cree/cre_syllabarium.html)
 
 ## NGR
 
-Nagari. *todo*
+Nagari. Confirm *unmapped*.
+
+[Nagari](http://en.wikipedia.org/wiki/N%C4%81gar%C4%AB_script)
+is an ancestor of the Devanagari script.
 
 ## NHC
 
@@ -295,11 +308,20 @@ a macron correspond to the Unicode characters that use the term
 
 ## TOD
 
-Todo. Qualify as **xal-Mong** (Oirat/Mongolian Script).
+Todo. Qualify as **xal-Mong** (Kalmyk-Oirat/Mongolian Script). Add **xwo* (Written Oirat).
 
-HarfBuzz uses **xwo**.
+The Todo script (sometimes called [Clear
+Script](http://en.wikipedia.org/wiki/Clear_script)) is a derivative
+script of Mongolian (*Todo* means clear in Mongolian), used to write
+the Kalmyk-Oirat dialects of Mongolian. See section 13.2
+([pdf](http://www.unicode.org/versions/Unicode6.2.0/ch13.pdf)) of the
+Unicode standard. Until very recently the Todo script was still used
+by some Kalmyk-Oirat speakers within Xinjiang and Qinghai in China.
 
-XXX
+ISO 639-2 has a code **xwo**, defined as *Written
+Oirat*. [Wikipedia](http://en.wikipedia.org/wiki/Oirat_language) says
+*Written Oirat* is sometimes used to refer to the language of
+historical documents written in the Clear script.
 
 ## WCR
 
@@ -319,15 +341,30 @@ Cree](http://www.languagegeek.com/algon/cree/nehiyawewin.html).
 
 ## YIC
 
-Yi Classic. *todo*
+Yi Classic. Confirm *unmapped*.
+
+The classical ideographic Yi script is not yet encoded in Unicode.
 
 ## YIM
 
-Yi Modern.
+Yi Modern. Confirm **iii** (Sichuan Yi).
 
-The spec says **iii** (Sichuan Yi).
+The spec says **iii** (Sichuan Yi or Nuosu).
 
-XXX
+According to [Wikipedia](http://en.wikipedia.org/wiki/Northern_Yi),
+Sichuan Yi or Nuosu (also known as Northern Yii) is the largest Yi
+dialect with some two million speakers, and is the basis of the
+literary language. The Chinese government recognizes it as the
+standard Yi language and is the only one taught in schools.
+
+Yi corresponds to the
+[Loloish](http://en.wikipedia.org/wiki/Loloish_languages) family of
+languages, which Ethnologue calls
+[Ngwi](http://www.ethnologue.com/subgroups/ngwi).  Ethnologue
+recognizes 98 members of Ngwi, but the Chinese government recognizes
+six mutually unintelligible Yi languages, of which Northern Yi is one.
+The other 5 Yi languages each correspond to multiple language codes
+in a very unclear way.
 
 ## ZHH
 
