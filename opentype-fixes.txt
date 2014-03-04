@@ -1,0 +1,24 @@
+Suggested changes to ISO 639 ID column
+
+AGW Add awn, xan
+FAN Add gcf
+FNE Change enf to yrk
+GAR Add ara
+HAL Change flm to cfm
+KEB Change ktb to alw
+KIS Change kqs, kss to guz
+MOR Add ary
+NOR Add nor
+PAA Add jpa
+SIG Change xst to stv
+SXT Change ngo to sot
+TOD Add xwo
+TNE Change enh to yrk
+YCR Add crk
+WCR Remove crk
+
+Use ISO 639-5 tags where appropriate:
+
+ATH ath
+BBR ber
+BML bai
