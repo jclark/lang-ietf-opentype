@@ -140,6 +140,9 @@ Leave unmapped.
 
 /*{"xan?",	HB_TAG('S','E','K',' ')},*/	/* Sekota */
 /*{"ngo?",	HB_TAG('S','X','T',' ')},*/	/* Sutu */
+
+"st"
+
 /*{"??",	HB_TAG('T','C','R',' ')},*/	/* TH-Cree */
 
 Leave unmapped.

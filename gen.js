@@ -120,6 +120,7 @@ function fixupMap(m) {
 	m.rename("KEB", "ktb", "alw");
 	m.removeAll("KIS").add("KIS", "guz");
 	m.add("PAA", "jpa");
+	m.rename("SXT", "ngo", "sot");
 	m.rename("TNE", "enh", "yrk");
     }
     return m;

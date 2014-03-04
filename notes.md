@@ -293,10 +293,10 @@ No idea why this tag exists.
 
 ## NOR
 
-Norwegian. Add **nor** (Norwegian) to **nob** (Norwegian Bokmal).
+Norwegian. Add **nor** (Norwegian) to **nob** (Norwegian Bokmol).
 
 **nor** is a macrolanguage consisting of **nno** (Norwegian Nynorsk)
-and **nob** (Norwegian Bokmal), but **nno* is already mapped to NYN (Nynorsk).
+and **nob** (Norwegian Bokmol), but **nno* is already mapped to NYN (Nynorsk).
 
 ## PAA
 
@@ -353,6 +353,27 @@ Silte Gurage. Rename **xst** to **stv** (Silt'e).
 **xst** was retired and split into **wle** (Wolane) and **stv** (Silt'e).
 
 Silt'e is [also known as](https://www.ethnologue.com/language/stv) East Gurage.
+
+## SXT
+
+Sutu. Change **ngo** (Ngoni) to **sot** (Southern Sotho).
+
+There are two possible meanings for Sutu.
+
+* an [alternate](http://www.ohchr.org/EN/UDHR/Pages/Language.aspx?LangID=sso)
+[name](http://en.wikipedia.org/wiki/Sotho_language#cite_note-schizo-4)
+for the Southern Sotho or Sesotho language of South Africa.
+
+* an [alternate name](http://www.ethnologue.com/language/ngo) for the
+Ngoni language of Tanzania
+
+The language names originally come from Microsoft, and Sutu also
+appears as the name of Microsoft Locale ID (LCID) 0x430, and that LCID
+is [also associated](http://support.microsoft.com/kb/q221435) with
+Sesotho.  The numerically next LCID is Tsonga, which another South
+African language, and the next is Tswana, which is also a South
+African language. This suggest that the first meaning is the
+originally intended one.
 
 ## TCR
 
