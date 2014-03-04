@@ -1,16 +1,17 @@
-# Notes on mapping between OpenType language system tags and ISO 639 tags
+# Notes on mapping from IETF language tags to OpenType language system tags
 
-The goal is to map IETF language tags to OpenType language system
-tags.  Thus, when the OpenType spec associates the same ISO 639 tag
-with multiple OpenType language system tags, we have to remove or
-qualify all except one of the associations, in order to make the
-mapping unambiguous.  Qualification consists of adding a script and/or
-variant subtag.
+The OpenType spec associates zero or more ISO 639-2 or ISO 639-3 tags
+with each OpenType language system tag. Our goal is to map IETF
+language tags to OpenType language system tags.  Thus, when the
+OpenType spec associates the same ISO 639 tag with multiple OpenType
+language system tags, we have to remove or qualify all except one of
+the associations, in order to make the mapping unambiguous.
+Qualification consists of adding a script and/or variant subtag.
 
 These notes are structured in terms of the OpenType language system
-tag. The first line gives the OpenType spec's name for the tag,
-followed by the recommendation for the mapping for this tag relative
-to the mapping in the current OpenType spec.
+tag. The first line gives the OpenType spec's name for the language
+system, followed by a recommendation for any changes to the associated
+ISO 639 tags, relative to the mapping in the current OpenType spec.
 
 For primary language tags, we use the ISO 639-2/3/5 3-letter name
 (since that is what the OpenType spec uses).  For qualified tags (with
@@ -108,7 +109,7 @@ The French-associated islands in the Antilles are in the Lesser Antilles.
 
 [Wikipedia](http://en.wikipedia.org/wiki/Antillean_Creole_French) also
 includes **gcf* in Antillean Creole French. It also mentions **scf**
-(San Miguel Creole French) but is nearly extinct and spoken in Panama
+(San Miguel Creole French) but it is nearly extinct and spoken in Panama
 (which is not part of the Antilles). Ethnologue also mentions **gcr**
 (Guianese Creole French).
 
@@ -142,7 +143,7 @@ Halam. Rename **flm** to **cfm** (Falam Chin).
 and split into **rnl** (Ranglong) and **cfm**.
 
 According to [Wikipedia](http://en.wikipedia.org/wiki/Halam_tribe), the
-Ranglong are a sub-group of the Halam, but Ranglong doesn't seem to be
+Ranglong are a sub-group of the Halam, but the Ranglong language doesn't appear to be
 a dialect of Halam.
 
 ## IPPH
@@ -297,6 +298,15 @@ Norwegian. Add **nor** (Norwegian) to **nob** (Norwegian Bokmal).
 **nor** is a macrolanguage consisting of **nno** (Norwegian Nynorsk)
 and **nob** (Norwegian Bokmal), but **nno* is already mapped to NYN (Nynorsk).
 
+## PAA
+
+Palestinian Aramaic.  Add **jpa** (Jewish Palestinian Aramaic) to **sam** (Samaritan Aramaic).
+
+Jewish Palestinian Aramaic is [also known as](http://multitree.linguistlist.org/codes/jpa)
+Palestinian Aramaic.
+
+Samaritan Aramaic is also an Aramaic that was used in Palestine.
+
 ## PGR
 
 Polytonic Greek. Qualify as **el-polyton**.
@@ -378,6 +388,13 @@ literary tradition and is spoken much more widely than Forest Nenets,
 so it seems better to map **yrk** to Tundra Nenets rather than Forest
 Nenets.
 
+## TNG
+
+Tonga. Confirm **toi** (Tonga (Zambia)).
+
+There are several different languages known as Tonga. Of these, by far the most
+important in terms of number of speakers is Tonga of Zambia **toi** with over
+a million speakers. The next biggest, Tonga of Mozambique, is a different language.
 
 ## TOD
 
@@ -393,7 +410,7 @@ by some Kalmyk-Oirat speakers within Xinjiang and Qinghai in China.
 
 ISO 639-2 has a code **xwo**, defined as *Written
 Oirat*. [Wikipedia](http://en.wikipedia.org/wiki/Oirat_language) says
-*Written Oirat* is sometimes used to refer to the language of
+the term *Written Oirat* is sometimes used to refer to the language of
 historical documents written in the Clear script.
 
 ## WCR
@@ -401,7 +418,7 @@ historical documents written in the Clear script.
 West-Cree. Remove **crk** (Plains Cree).
 
 West-Cree is a grouping that contains Plains Cree, Woods Cree and some
-of Swampy Cree; there is no code for this.
+of Swampy Cree; there is no IETF tag for this.
 
 See YCR.
 
