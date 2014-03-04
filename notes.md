@@ -372,7 +372,7 @@ appears as the name of Microsoft Locale ID (LCID) 0x430, and that LCID
 is [also associated](http://support.microsoft.com/kb/q221435) with
 Sesotho.  The numerically next LCID is Tsonga, which another South
 African language, and the next is Tswana, which is also a South
-African language. This suggest that the first meaning is the
+African language. This suggests that the first meaning is the
 originally intended one.
 
 ## TCR
