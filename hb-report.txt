@@ -7,17 +7,47 @@ The entries for "sck", "vls", "wo" are not in sort order.
 The tag for "tmh" is in lower case instead of upper case.
 
 Some tags are missing a final zero. Recent drafts of the OpenType spec
--- I found a WD for the next edition of the ISO spec
+-- I found a WD for the next edition of the ISO standard
 http://mpeg.chiariglione.org/standards/mpeg-4/open-font-format/text-wd-isoiec-14496-22-3rd-edition
 -- add some 4-character tags, whose last character is a zero.  There
 are four cases where these have been added, but the final zero was
 incorrectly omitted: kab -> KAB0, ksh -> KSH0, kg -> KON0, pap ->
 PAP0, sn -> SNA0.
 
+The following entries appear in the spec, but are missing from HarfBuzz, and they seem
+uncontroversial to me.
+
+wlc CMR Mwali Comorian
+wni CMR Ndzwani Comorian
+zdj CMR Ngazidja Comorian
+caf CRR Southern Carrier
+bxr RBU Russia Buriat
+co COS Corsican
+
+The last is probably missing because it was omitted from the ISO WD; I
+suspect this is a bug in the ISO WD.
+
+Less obvious but also following the spec, remove the following
+
+nco SIB Sibe
+xom KMO Komo (Sudan)
+
+and also add the following:
+
+sjo SIB Xibe
+fuf FTA Pular
+pro PRO Old Provencal
+rmz ARK Marma
+
+Other suggested additions (not in the spec)
+
+swc SWK Congo Swahili
+njz NIS Nyishi
+tgj NIS Tagin
 
 /*{"ahg/awn/xan?",	HB_TAG('A','G','W',' ')},*/	/* Agaw */
 
-Map all of "ahg", "awn", "xan".
+"ahg", "awn", "xan"
 
 /*{"gsw?/gsw-FR?",	HB_TAG('A','L','S',' ')},*/	/* Alsatian */
 
@@ -25,11 +55,11 @@ Map all of "ahg", "awn", "xan".
 
 /*{"krc",	HB_TAG('B','A','L',' ')},*/	/* Balkar */
 
-Leave unmapped.
+Leave unmapped
 
 /*{"??",	HB_TAG('B','C','R',' ')},*/	/* Bible Cree */
 
-Leave unmapped.
+Leave unmapped
 
 /*{"zh?",	HB_TAG('C','H','N',' ')},*/	/* Chinese (seen in Microsoft fonts) */
 
@@ -37,11 +67,11 @@ Leave unmapped.
 
 /*{"acf/gcf?",	HB_TAG('F','A','N',' ')},*/	/* French Antillean */
 
-"acf" and "gcf"
+"acf", "gcf"
 
 /*{"enf?/yrk?",	HB_TAG('F','N','E',' ')},*/	/* Forest Nenets */
 
-Leave unmapped.
+Leave unmapped
 
 /*{"fuf?",	HB_TAG('F','T','A',' ')},*/	/* Futa */
 
@@ -57,7 +87,7 @@ Leave unmapped.
 
 /*{"fonipa",	HB_TAG('I','P','P','H')},*/	/* Phonetic transcription—IPA conventions */
 
-"und-fonipa", or better map anything with a variant of "fonipa".
+"und-fonipa", or better map anything with a variant of "fonipa"
 
 /*{"ga-Latg?/Latg?",	HB_TAG('I','R','T',' ')},*/	/* Irish Traditional */
 
@@ -73,7 +103,7 @@ Leave unmapped.
 
 /*{"Geok",	HB_TAG('K','G','E',' ')},*/	/* Khutsuri Georgian */
 
-"ka-Geok" (Georgian written with the Khutsuri script).
+"ka-Geok" (Georgian written with the Khutsuri script)
 
 /*{"kca",	HB_TAG('K','H','K',' ')},*/	/* Khanty-Kazim */
 
@@ -81,28 +111,43 @@ Leave unmapped.
 
 /*{"kca",	HB_TAG('K','H','S',' ')},*/	/* Khanty-Shurishkar */
 
-Leave unmapped.
+Leave unmapped
 
 /*{"kca",	HB_TAG('K','H','V',' ')},*/	/* Khanty-Vakhi */
 
-Leave unmapped.
+Leave unmapped
 
 /*{"guz?/kqs?/kss?",	HB_TAG('K','I','S',' ')},*/	/* Kisii */
 
 "guz"
 
 /*{"kfa/kfi?/kpb?/xua?/xuj?",	HB_TAG('K','O','D',' ')},*/	/* Kodagu */
+
+"kfa"
+
 /*{"okm?/oko?",	HB_TAG('K','O','H',' ')},*/	/* Korean Old Hangul */
+
+"okm"
+
 /*{"kon?/ktu?/...",	HB_TAG('K','O','N',' ')},*/	/* Kikongo */
+
+"ktu"
+
 /*{"kfx?",	HB_TAG('K','U','L',' ')},*/	/* Kulvi */
+
+"kfx"
+
 /*{"??",	HB_TAG('L','A','H',' ')},*/	/* Lahuli */
+
+"lbf", "lae", "bfu"
+
 /*{"??",	HB_TAG('L','C','R',' ')},*/	/* L-Cree */
 
-Leave unmapped.
+Leave unmapped
 
 /*{"??",	HB_TAG('M','A','L',' ')},*/	/* Malayalam Traditional */
 
-Leave unmapped.
+Leave unmapped
 
 /*{"mnk?/mlq?/...",	HB_TAG('M','L','N',' ')},*/	/* Malinke */
 
@@ -118,7 +163,7 @@ Leave unmapped
 
 /*{"jpa?/sam?",	HB_TAG('P','A','A',' ')},*/	/* Palestinian Aramaic */
 
-"jpa" and "sam"
+"jpa", "sam"
 
 /*{"polyton",	HB_TAG('P','G','R',' ')},*/	/* Polytonic Greek */
 
@@ -136,16 +181,19 @@ Leave unmapped
 
 /*{"chp?",	HB_TAG('S','A','Y',' ')},*/	/* Sayisi */
 
-Leave unmapped.
+Leave unmapped
 
 /*{"xan?",	HB_TAG('S','E','K',' ')},*/	/* Sekota */
+
+"xan"
+
 /*{"ngo?",	HB_TAG('S','X','T',' ')},*/	/* Sutu */
 
 "st"
 
 /*{"??",	HB_TAG('T','C','R',' ')},*/	/* TH-Cree */
 
-Leave unmapped.
+Leave unmapped
 
 /*{"tnz?/tog?/toi?",	HB_TAG('T','N','G',' ')},*/	/* Tonga */
 
@@ -157,7 +205,7 @@ Leave unmapped.
 
 /*{"??",	HB_TAG('W','C','R',' ')},*/	/* West-Cree */
 
-Leave unmapped.
+Leave unmapped
 
 /*{"cre?",	HB_TAG('Y','C','R',' ')},*/	/* Y-Cree */
 
@@ -165,7 +213,7 @@ Leave unmapped.
 
 /*{"??",	HB_TAG('Y','I','C',' ')},*/	/* Yi Classic */
 
-Leave unmapped.
+Leave unmapped
 
 /*{"ii?/Yiii?",	HB_TAG('Y','I','M',' ')},*/	/* Yi Modern */
 

@@ -53,6 +53,25 @@ Phonetic transcription - Americanist conventions. Confirm *unmapped*.
 There is no tag corresponding to the [Americanist Phonetic
 Alphabet](http://en.wikipedia.org/wiki/Americanist_phonetic_notation).
 
+## ARA
+
+Arabic. Add **arb** (Standard Arabic).
+
+## ARK
+
+Arakanese. Remove **mhv** (Arakanese) leaving **rki** (Rakhine) and **rmz** (Marma).
+
+**mhv** (Arakanese) was [retired and
+split](http://www-01.sil.org/iso639-3/documentation.asp?id=mhv) into
+**rki** (Rakhine) and **rmz** (Marma).  Before **mhv** was retired,
+both Rakhine and Marma were treated as [alternate
+names](http://archive.ethnologue.com/14/show_language.asp?code=mhv)
+for Arakanese. Currently Arakanese is considered an alternate name for
+Rakhine, but Marma is a also considered a [dialect of
+Arakanese](http://en.wikipedia.org/wiki/Arakanese_language).
+
+**mhv** is not a registered IETF language subtag.
+
 ## ATH
 
 Athapascan. Replace by **ath** (Athpascan languages).
@@ -87,6 +106,12 @@ Cree dialects tend to
 how they represent final y.  This suggests that Bible Cree is a
 written variation of Cree that has a different glyph for final y.
 
+## BHI
+
+Bhili. Remove **bhi** (Bhilali) leaving **bhb** (Bhili).
+
+Bhili and Bhilali are not the same.
+
 ## BML
 
 Bamileke. Add **bai** (Bamileke languages).
@@ -98,6 +123,10 @@ Bamileke. Add **bai** (Bamileke languages).
 Divehi. Remove **div**.
 
 This is deprecated in the spec in favour of DIV.
+
+## ETI
+
+Estonian. Add **ekk** (Standard Estonian).
 
 ## FAN
 
@@ -119,7 +148,7 @@ Forest Nenets. Remove **enf** (Forest Enets).
 
 See TNE (Tundra Nenets).
 
-## FUF
+## FTA
 
 Futa. Confirm **fuf** (Pular).
 
@@ -181,6 +210,13 @@ as a dialect of Kambaata, but is [now
 classified](http://www.ethnologue.com/language/alw) as a separate
 language.
 
+## KOD
+
+Kodagu. Confirm **kfa** (Kodava).
+
+[ISO 639-3](http://www-01.sil.org/iso639-3/documentation.asp?id=kfa)
+used to use *Kodagu* instead of *Kodava* as the name for **kfa**.
+
 ## KGE
 
 Khutsuri Georgian. Qualify as **ka-Geok** (Georgian/Khutsuri script).
@@ -215,6 +251,69 @@ Kisi (with one *i*) isn't the same as Kisii (with two *i*s).
 
 [Kisii](http://en.wikipedia.org/wiki/Gusii_language) is another name for Gusii, which has
 about 2 million speakers.
+
+## KMO
+
+Komo. Confirm **kmw** (Komo, Democratic Republic of Congo).
+
+**xom** (Komo, Sudan) is an
+[unrelated](http://www.ethnologue.com/language/xom)
+[language](http://www.ethnologue.com/language/kmw) with many fewer
+speakers.  The intended meaning of Komo is thus unlikely to include
+**xom**.
+
+## KOH
+
+Korean Old Hangul. Confirm **okm** (Middle Korean).
+
+There are two potential ISO 639-2 tags: **okm** (Middle Korean, 10th-16th cent.),
+and **oko** (Old Korean, 3rd-9th cent.).  The Hangul script was invented during
+the [Middle Korean](http://en.wikipedia.org/wiki/History_of_the_Korean_language#Middle_Korean)
+period; Old Korean was written using Chinese characters.  This means that **oko** is
+not appropriate for a language system called Korean Old *Hangul*.
+
+## KON
+
+Kikongo. Confirm **ktu** (Kituba (Democratic Republic of Congo))
+
+We have three choices:
+
+* **ktu** (Kituba) also known as Kikongo Commercial and Kikingo ya
+leta (Kikongo of the state administration), with 4.2m speakers; a
+creole language based on Kongo
+* **kng** (Koongo) also known as Kikongo, with 3m speakers in the Congo
+* **kon** (Kongo) macrolanguage containing **kng** and a couple of other much less
+widely spoken languages
+
+The spec maps **ktu** to KON; ISO WD5 also maps **kon** to
+KON0. Wikipedia says of
+[Kituba](http://en.wikipedia.org/wiki/Kituba_language) that "it is
+often called in short Kikongo, especially out of the region of ethnic
+Bakongo people. The constitution of the Democratic Republic of Congo
+lists Kikongo as one of the national languages. In fact, it refers to
+Kikongo ya leta (i.e. Kituba), because a translation of the
+constitution itself is written in Kituba but no translation exists in
+Kikongo...In the academic circles the language is called Kikongo-Kituba".
+
+Given all the circumstances, it seems best to stick to the spec's recommendation.
+
+## KUL
+
+Kulvi. Confirm **kfx** (Kullu Pahari).
+
+Kulvi is one of the alternate names listed in
+[Ethnologue](http://www.ethnologue.com/language/kfx).
+
+## LAH
+
+Lahuli. Add **lbf** (Tinani) and **lae** (Pattani) to **bfu** (Gahri).
+
+**lbf** is [also known as](http://www.ethnologue.com/language/lbf)
+Lahuli or Tinan Lahuli; **lae** is [also known
+**as](http://www.ethnologue.com/language/lae) Lahuli, or Chamba
+**Lahuli. Both have more speakers than **bfu** (also known as Lahuli
+**of Bunan).  They are all in the Ethnologue group
+[Kinauri](http://www.ethnologue.com/subgroups/kinauri).
 
 ## LCR
 
@@ -291,6 +390,15 @@ there is already a tag NCR.
 
 No idea why this tag exists.
 
+## NIS
+
+Nisi. Add **njz** (Nyishi) and **tgj* (Tagin) to **dap** (Nishi, India).
+
+**dap** (Nisi, India) was retired and split into **njz** (Nyishi) and
+****tgj** (Tagin).  **dap** is in the IETF language registry, but
+**deprecated.  **yso** (Nisi, China) is an unrelated, much smaller
+**language.
+
 ## NOR
 
 Norwegian. Add **nor** (Norwegian) to **nob** (Norwegian Bokmol).
@@ -310,6 +418,25 @@ Samaritan Aramaic is also an Aramaic that was used in Palestine.
 ## PGR
 
 Polytonic Greek. Qualify as **el-polyton**.
+
+## PRO
+
+Provencal. Confirm **pro** (Old Provencal, Old Occitan).
+
+There's also **oci** (Occitan), of which (modern) Provencal is a
+dialect. ISO 639-2 [used
+to](http://www.loc.gov/standards/iso639-2/php/code_changes.php)
+specify Provencal as an alternate name for **oci**. But **oci** is
+already mapped to OCI.
+
+It seems a stretch to assume that
+*Provencal* by itself refers to *Old* Provencal, but on the other hand
+
+* there is important literature in Old Occitan, whereas modern
+Provencal is primarily a spoken language (and in the OpenType context,
+we are primarily concerned with the written language);
+
+* the tags are the same.
 
 ## QIN
 
@@ -346,6 +473,34 @@ French Catholic missionaries that introduced the other variant.
 
 In theory a variant subtag could be registered for this, but it's probably not worth it.
 
+## SEK
+
+Sekota. Confirm **xan** (Xamtanga).
+
+[Xamtanga](http://www.ethnologue.com/language/xan) is the language of
+the Xamir people of Ethiopia, who live in the Wag Hemra zone in the
+Amhara Region of
+Ethiopia. [Sekota](http://en.wikipedia.org/wiki/Soqota) (or Soquota)
+is one of the major towns and a
+[district](http://en.wikipedia.org/wiki/Soqota_%28woreda%29) in the
+[Wag Hemra zone](http://en.wikipedia.org/wiki/Wag_Hemra_Zone).
+
+## SIB
+
+Sibe. Confirm **sjo** (Xibe).
+
+[Two choices](http://en.wikipedia.org/wiki/Sibe_language):
+
+* **sjo** (Xibe), a language of China, similar to Manchu, spoken by 30,000 or
+* **nco** (Sibe), a language of Papua New Guinea, spoken by 6,000.
+
+The term *Sibe* seems more
+[commonly](http://www.press.uchicago.edu/ucp/books/book/distributed/S/bo15645501.html)
+[used](http://en.wikipedia.org/wiki/Xibe_language) to refer to the
+first than the second. Also the first has many more speakers, and is a
+significant language, being the last remaining active variety of
+Manchu.
+
 ## SIG
 
 Silte Gurage. Rename **xst** to **stv** (Silt'e).
@@ -353,6 +508,17 @@ Silte Gurage. Rename **xst** to **stv** (Silt'e).
 **xst** was retired and split into **wle** (Wolane) and **stv** (Silt'e).
 
 Silt'e is [also known as](https://www.ethnologue.com/language/stv) East Gurage.
+
+## SNA
+
+Sena. Change **she** to **seh**.
+
+## SWK
+
+Swahili. Add **swh** (Swahili (individual language)) and **swc**
+(Congo Swahili) to **swa** (Swahili (macrolanguage)).
+
+**swa** is a macrolanguage containing **swh** and **swc**. They are all Swahili.
 
 ## SXT
 
@@ -486,7 +652,7 @@ Chinese HongKong-SAR. *todo*
 Chinese Phonetic. Qualify as **zh-Latn**.
 
 The more precise tag would be **zh-Latn-pinyin**, but there isn't any better match for
-**zh-Latn**. Se:
+**zh-Latn**. See:
 
 http://lists.w3.org/Archives/Public/www-style/2009Oct/0327.html
 http://lists.w3.org/Archives/Public/www-style/2009Oct/0346.html

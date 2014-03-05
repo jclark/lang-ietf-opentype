@@ -1,16 +1,23 @@
+
 Suggested changes to ISO 639 ID column
 
 AGW Add awn, xan
+ARA Add arb
+ETI Add ekk
 FAN Add gcf
 FNE Change enf to yrk
 GAR Add ara
 HAL Change flm to cfm
 KEB Change ktb to alw
 KIS Change kqs, kss to guz
+LAH Add lbf, lae
 MOR Add ary
+NIS Add njz, tgj
 NOR Add nor
 PAA Add jpa
 SIG Change xst to stv
+SNA Change she to seh
+SWK Add swh
 SXT Change ngo to sot
 TOD Add xwo
 TNE Change enh to yrk
@@ -22,3 +29,9 @@ Use ISO 639-5 tags where appropriate:
 ATH ath
 BBR ber
 BML bai
+
+WD5 issues
+
+Corsican/COS/cos is missing from WD5.
+Name of ZHH has changed from "Chinese, Hong Kong SAR" to "Chinese".
+

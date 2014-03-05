@@ -70,6 +70,12 @@ function fixupMap(m) {
     if (false) {
 	m.remove("MOL", "mol"); // Moldavian retired
     }
+    m.remove("ARK", "mhv");  // mhv retired and not a valid IETF code
+    m.add("ARA", "arb"); // Standard Arabic
+    m.add("SWK", "swh").add("SWK", "swc"); // Swahili
+    m.add("ETI", "ekk"); // Standard Estonian
+    m.rename("SNA", "she", "seh"); // Sena
+    m.remove("BHI", "bhi"); // Bhili != Bhilali
     // Add some missing entries
     m.add("MOR", "ary"); // Moroccan Arabic
     m.add("BML", "bai"); // Bamileke (collection)
@@ -119,6 +125,7 @@ function fixupMap(m) {
 	m.remove("FNE", "enf");
 	m.rename("KEB", "ktb", "alw");
 	m.removeAll("KIS").add("KIS", "guz");
+	m.add("LAH", "lbf").add("LAH", "lae"); // Lahuli
 	m.add("PAA", "jpa");
 	m.rename("SXT", "ngo", "sot");
 	m.rename("TNE", "enh", "yrk");

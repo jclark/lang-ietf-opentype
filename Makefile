@@ -21,3 +21,16 @@ ISO-639-2_utf-8.txt:
 
 clean:
 	rm -f $(CLEANFILES) *.tmp
+
+extra-wd5.txt: languagetags-wd5.txt otlangs.js
+	$(NODE) genlanguagetags.js \
+	  | join -t '+' -v 2 -1 2 -2 2 - languagetags-wd5.txt \
+	  | cut -d '+' -f 2 >$@
+
+hb-map-trim.txt: hb-map.txt extra-wd5.txt
+	sort -k 2 hb-map.txt | join -v 1 -1 2 - extra-wd5.txt | sort -k 1 >$@
+
+hb-extra.txt: map.txt hb-map-trim.txt
+	join -v 1 hb-map-trim.txt map.txt >$@
+
+
