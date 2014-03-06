@@ -4,6 +4,8 @@ var registry = require('language-subtag-registry/data/json/registry');
 
 var iso639 = require('./iso639');
 
+var optionReportMacrolangExpansion = false;
+
 // Moldavian has been retired, so the shortening isn't in the official map,
 // but we keep it since we still have a MOL entry
 iso639["mol"] = "mo";
@@ -72,7 +74,7 @@ function fixupMap(m) {
     }
     m.remove("ARK", "mhv");  // mhv retired and not a valid IETF code
     m.add("ARA", "arb"); // Standard Arabic
-    m.add("SWK", "swh").add("SWK", "swc"); // Swahili
+    m.add("SWK", "swh"); // Swahili
     m.add("ETI", "ekk"); // Standard Estonian
     m.rename("SNA", "she", "seh"); // Sena
     m.remove("BHI", "bhi"); // Bhili != Bhilali
@@ -131,6 +133,7 @@ function fixupMap(m) {
 	m.add("LAH", "lbf").add("LAH", "lae"); // Lahuli
 	m.add("PAA", "jpa");
 	m.rename("SXT", "ngo", "sot");
+	m.add("SWK", "swc"); // Swahili
 	m.rename("TNE", "enh", "yrk");
     }
     return m;
@@ -189,41 +192,51 @@ function expandMacrolang(m) {
         var macrolang = registry[i]['Macrolanguage'];
         if (macrolang && m[macrolang]
             && registry[i]['Type'] === 'language'
-            && registry[i]['Deprecated'] === undefined) {
+            && registry[i]['Preferred-Value'] === undefined) {
             var componentTag = registry[i]['Subtag'];
             if (componentLangs[macrolang] === undefined)
                 componentLangs[macrolang] = [];
             componentLangs[macrolang].push(componentTag);
         }
     }
-    var addedMap = {};
+    var addedList = [];
     for (var tag in m) {
         var components = componentLangs[tag];
         if (components) {
-            var added = [];
             for (i = 0; i < components.length; i++) {
                 var component = components[i];
-                if (!m[component]) {
-                    //console.error('Should add mapping from "%s" to "%s" because of macrolanguage "%s"',
-                    //            component, m[tag], tag);
-                    added.push(component);
-                }
+                if (!m[component])
+                    addedList.push({ macrolang: tag, component: component, opentype: m[tag]});
             }
-            if (added.length)
-                addedMap[m[tag]] = { macrolang: tag, components: added};
         }
     }
-    var keys = Object.keys(addedMap).sort();
-    for (i = 0; i < keys.length; i++) {
-        var line = 'Added macrolang components ' + keys[i]+ " (" + addedMap[keys[i]].macrolang + '):';
-        components = addedMap[keys[i]].components;
-        for (var j = 0; j < components.length; j++) {
-            if (j > 0)
-                line += ',';
-            line += ' ';
-            line += components[j];
+    for (i = 0; i < addedList.length; i++) {
+        var added = addedList[i];
+        m[added.component] = added.opentype;
+    }
+    if (optionReportMacrolangExpansion) {
+        addedList.sort(function (x, y) {
+            if (x.opentype < y.opentype)
+                return -1;
+            if (x.opentype > y.opentype)
+                return 1;
+            if (x.component < y.component)
+                return -1;
+            if (x.component > y.component)
+                return 1;
+            return 0;
+        });
+        var report = "";
+        for (i = 0; i < addedList.length; i++) {
+            if (i === 0
+                || addedList[i].opentype !== addedList[i - 1].opentype
+                || addedList[i].macrolang != addedList[i - 1].macrolang)
+                report += '\n' + addedList[i].opentype + ' (' + addedList[i].macrolang + '): ' + addedList[i].component;
+            else
+                report += ', ' + addedList[i].component;
         }
-        console.error('%s', line);
+        if (report)
+            console.error('Added macrolang components:%s', report);
     }
     return m;
 }
