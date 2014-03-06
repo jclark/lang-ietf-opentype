@@ -118,6 +118,21 @@ Bamileke. Add **bai** (Bamileke languages).
 
 **bai** is a collection tag.
 
+## BTI
+
+Beti. Add **beb**, **bum**, **bxp**, **eto**, **ewo**, **fan**, **mct** to **btb** (Beti, Cameroon).
+
+Code **btb** was [retired and
+split](http://www.silinternational.net/iso639-3/documentation.asp?id=btb)
+into **beb** (Bebele), **bum** (Bulu (Cameroon)), **bxp** (Bebil),
+**eto** (Eton (Cameroon)), **ewo** (Ewondo), **fan** (Fang (Equatorial
+Guinea)), and **mct** (Mengisa).
+
+There's also a code **eot** Beti (Côte d'Ivoire)), but that is an
+[unrelated, almost extinct](http://www.ethnologue.com/language/eot)
+language, and thus unlikely to be part of the intended meaning of the
+BTI code.
+
 ## DHV
 
 Divehi. Remove **div**.

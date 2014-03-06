@@ -120,6 +120,8 @@ function fixupMap(m) {
     // Wait till we have resolved divergences from HB before adding these.
     if (false) {
 	m.add("AGW", "awn").add("AGW", "ahg").add("AGW", "xan");
+	m.add("BTI", "beb").add("BTI", "bum").add("BTI", "bxp").add("BTI", "eto")
+	    .add("BTI", "ewo").add("BTI", "fan").add("BTI", "mct");
 	m.remove("WCR", "crk").add("YCR", "crk");
 	m.add("FAN", "gcf");
 	m.remove("FNE", "enf");

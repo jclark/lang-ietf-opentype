@@ -38,12 +38,20 @@ sjo SIB Xibe
 fuf FTA Pular
 pro PRO Old Provencal
 rmz ARK Marma
+eot BTI Beti (Côte d'Ivoire)
 
 Other suggested additions (not in the spec)
 
 swc SWK Congo Swahili
 njz NIS Nyishi
 tgj NIS Tagin
+beb BTI Bebele
+bum BTI Bulu (Cameroon)
+bxp BTI Bebil
+eto BTI Eton (Cameroon)
+ewo BTI Ewondo
+fan BTI Fang (Equatorial Guinea)
+mct BTI Mengisa
 
 /*{"ahg/awn/xan?",	HB_TAG('A','G','W',' ')},*/	/* Agaw */
 

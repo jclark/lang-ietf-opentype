@@ -3,6 +3,7 @@ Suggested changes to ISO 639 ID column
 
 AGW Add awn, xan
 ARA Add arb
+BTI Add beb, bum, bxp, eto, ewo, fan, mct
 ETI Add ekk
 FAN Add gcf
 FNE Change enf to yrk
