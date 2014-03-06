@@ -538,7 +538,7 @@ Venda+VEN+ven
 Vietnamese+VIT+vie
 Volapük+VOL+vol
 Võro+VRO+vro
-Wa+WA +wbm
+Wa+WA+wbm
 Wagdi+WAG+wbr
 Waray-Waray+WAR+war
 West-Cree+WCR+crk
