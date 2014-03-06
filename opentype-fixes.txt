@@ -30,6 +30,7 @@ Use ISO 639-5 tags where appropriate:
 ATH ath
 BBR ber
 BML bai
+IJO ijo
 
 WD5 issues
 

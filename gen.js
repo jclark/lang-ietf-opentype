@@ -80,6 +80,7 @@ function fixupMap(m) {
     m.add("MOR", "ary"); // Moroccan Arabic
     m.add("BML", "bai"); // Bamileke (collection)
     m.add("BBR", "ber"); // Berber (collection)
+    m.add("IJO", "ijo"); // Ijo (collection)
     m.add("NOR", "nor"); // Norwegian (macrolanguage)
     m.add("ATH", "ath"); // Athapascan languages (collection)
     // Todo; prefer Kalmyk, KLM, for xal (Kalmyk); use written Oirat instead

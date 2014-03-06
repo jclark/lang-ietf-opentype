@@ -190,6 +190,12 @@ According to [Wikipedia](http://en.wikipedia.org/wiki/Halam_tribe), the
 Ranglong are a sub-group of the Halam, but the Ranglong language doesn't appear to be
 a dialect of Halam.
 
+## IJO
+
+Ijo. Add **ijo** (Ijo languages).
+
+This is a collection.
+
 ## IPPH
 
 Phonetic transcription - IPA Conventions. Add: **und-fonipa**
