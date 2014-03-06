@@ -29,7 +29,7 @@ LangMap.prototype.add = function (langSys, isoTag) {
 LangMap.prototype.removeAll = function (langSys) {
     this.getEntryTags(langSys).length = 0;
     return this;
-}
+};
 
 LangMap.prototype.remove = function (langSys, isoTag) {
     var tags = this.getEntryTags(langSys);
@@ -54,7 +54,7 @@ LangMap.prototype.getEntryTags = function (langSys) {
     if (entry === undefined) 
 	throw new Error('expected entry for ' + langSys);
     return entry.iso;
-}
+};
 
 // This is before shortening
 
