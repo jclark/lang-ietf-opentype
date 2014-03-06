@@ -31,6 +31,7 @@ Less obvious but also following the spec, remove the following
 
 nco SIB Sibe
 xom KMO Komo (Sudan)
+kvd KUI Kui (Indonesia)
 
 and also add the following:
 

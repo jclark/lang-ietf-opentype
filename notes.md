@@ -318,6 +318,15 @@ Kikongo...In the academic circles the language is called Kikongo-Kituba".
 
 Given all the circumstances, it seems best to stick to the spec's recommendation.
 
+## KUI
+
+Kui. Confirm **kxu** (Kui (India)).
+
+There's also **kvd** (Kui (Indonesia)), but that is a [unrelated, much
+smaller](http://www.ethnologue.com/language/kxu) (1,900 as opposed to
+916,000 speakers) language, so it is unlikely to be part of the
+intended meaning of Kui.
+
 ## KUL
 
 Kulvi. Confirm **kfx** (Kullu Pahari).
