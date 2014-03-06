@@ -136,8 +136,12 @@ function fixupMap(m) {
 function shortenIso(m) {
     var inRegistry = {};
     for (var i = 0; i < registry.length; i++) {
-        if (registry[i]['Type'] === 'language')
-            inRegistry[registry[i]['Subtag']] = true;
+        if (registry[i]['Type'] === 'language') {
+            var val = true;
+            if (registry[i]['Deprecated'])
+                val = 'deprecated';
+            inRegistry[registry[i]['Subtag']] = val;
+        }
     }
     for (var ott in m) {
 	if (m.hasOwnProperty(ott)) {
@@ -148,6 +152,8 @@ function shortenIso(m) {
 		    v[i] = t;
                 if (!inRegistry[v[i]])
                     console.error('%s: not in registry (%s)', v[i], ott);
+                else if (inRegistry[v[i]] === 'deprecated')
+                    console.error('%s: deprecated by IETF registry', v[i]);
 	    }
 	}
     }
@@ -174,10 +180,55 @@ function invert(m) {
     return inv;
 }
 
+function expandMacrolang(m) {
+    var componentLangs = {};
+    for (var i = 0; i < registry.length; i++) {
+        var macrolang = registry[i]['Macrolanguage'];
+        if (macrolang && m[macrolang]
+            && registry[i]['Type'] === 'language'
+            && registry[i]['Deprecated'] === undefined) {
+            var componentTag = registry[i]['Subtag'];
+            if (componentLangs[macrolang] === undefined)
+                componentLangs[macrolang] = [];
+            componentLangs[macrolang].push(componentTag);
+        }
+    }
+    var addedMap = {};
+    for (var tag in m) {
+        var components = componentLangs[tag];
+        if (components) {
+            var added = [];
+            for (i = 0; i < components.length; i++) {
+                var component = components[i];
+                if (!m[component]) {
+                    //console.error('Should add mapping from "%s" to "%s" because of macrolanguage "%s"',
+                    //            component, m[tag], tag);
+                    added.push(component);
+                }
+            }
+            if (added.length)
+                addedMap[m[tag]] = { macrolang: tag, components: added};
+        }
+    }
+    var keys = Object.keys(addedMap).sort();
+    for (i = 0; i < keys.length; i++) {
+        var line = 'Added macrolang components ' + keys[i]+ " (" + addedMap[keys[i]].macrolang + '):';
+        components = addedMap[keys[i]].components;
+        for (var j = 0; j < components.length; j++) {
+            if (j > 0)
+                line += ',';
+            line += ' ';
+            line += components[j];
+        }
+        console.error('%s', line);
+    }
+    return m;
+}
+
 function printMap(m) {
     var tags = Object.keys(m).sort();
     for (var i = 0; i < tags.length; i++)
 	console.log('%s %s', tags[i], m[tags[i]]);
 }
 
-printMap(invert(shortenIso(fixupMap(buildLangsMap(require('./otlangs'))))));
+printMap(expandMacrolang(invert(shortenIso(fixupMap(buildLangsMap(require('./otlangs')))))));

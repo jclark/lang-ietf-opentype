@@ -35,3 +35,42 @@ WD5 issues
 Corsican/COS/cos is missing from WD5.
 Name of ZHH has changed from "Chinese, Hong Kong SAR" to "Chinese".
 
+Macrolangs
+
+ARA (ara): aao, abh, abv, acm, acq, acw, acx, acy, adf, aeb, aec, afb, ajp, apc, apd, arq, ars, arz, auz, avl, ayh, ayl, ayn, ayp, bbz, pga, shu, ssh
+AYM (aym): ayc, ayr
+AZE (aza): azb, azj
+BIK (bik): bcl, bln, bto, cts, fbl, lbl, rbl, ubl
+BLI (bal): bcc, bgn, bgp
+DGR (doi): dgo, xnr
+DNK (din): dib, dik, dip, diw, dks
+ETI (est): vro
+FAR (per): pes
+FUL (ful): ffm, fub, fuc, fue, fuh, fui, fuq, fuv
+GON (gon): ggo, gno
+GUA (grn): gnw, gug, gui, gun, nhd
+INU (iku): ike, ikt
+JII (yid): ydd, yih
+KAL (kln): enb, eyo, niq, oki, pko, sgc, spy, tec, tuy
+KNR (kau): kby, knc, krt
+KOK (kok): gom, knn
+KPL (kpe): gkp, xpe
+KUR (kur): ckb, kmr, sdh
+LUH (luy): bxk, ida, lkb, lko, lks, lri, lrm, lsm, lto, lts, lwg, nle, nyd, rag
+LVI (lav): ltg, lvs
+MAW (mwr): dhd, mtr, mve, rwr, swv, wry
+MLG (mlg): bhr, bmm, bzc, msh, plt, skg, tdx, tkg, txy, xmv, xmw
+MLY (may): bjn, btj, bve, bvu, coa, dup, hji, jak, jax, kvb, kvr, kxd, lce, lcf, liw, max, meo, mfa, mfb, min, mqg, msi, mui, orn, ors, pel, pse, tmw, urk, vkk, vkt, xmm, zlm, zmi, zsm
+MNG (mon): khk, mvf
+MNK (man): emk, mku, msc, mwk
+NEP (nep): dty, npi
+OJB (oji): ciw, ojb, ojc, ojg, ojw, otw
+ORI (ori): ory, spv
+ORO (orm): gax, gaz, hae, orc
+PAS (pus): pbt, pbu, pst
+RAJ (raj): bgq, gda, gju, mup
+ROY (rom): rmc, rmf, rml, rmn, rmo, rmw, rmy
+SQI (alb): aae, aat, aln, als
+SYR (syr): cld
+TWI (aka): twi, fat
+UZB (uzb): uzn, uzs
