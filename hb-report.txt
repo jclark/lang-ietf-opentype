@@ -29,11 +29,13 @@ suspect this is a bug in the ISO WD.
 
 Less obvious but also following the spec, remove the following
 
-nco SIB Sibe
-xom KMO Komo (Sudan)
+eot BTI Beti (Côte d'Ivoire)
 kvd KUI Kui (Indonesia)
 mdc MLE Male (Papua New Guinea)
+nco SIB Sibe
 ril RIA Riang (India)
+xom KMO Komo (Sudan)
+yso NIS Nisi (China)
 
 and also add the following:
 
@@ -41,9 +43,12 @@ sjo SIB Xibe
 fuf FTA Pular
 pro PRO Old Provencal
 rmz ARK Marma
-eot BTI Beti (Côte d'Ivoire)
 
-Other suggested additions (not in the spec)
+Other suggested removals (not in the spec):
+
+xst SIG (not an IETF tag, was Silt'e in ISO 639-2 before it was retired)
+
+and additions (not in the spec)
 
 swc SWK Congo Swahili
 njz NIS Nyishi
