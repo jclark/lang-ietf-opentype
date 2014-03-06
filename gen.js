@@ -1,6 +1,6 @@
 "use strict";
 
-//var registry = require('language-subtag-registry/data/json/registry');
+var registry = require('language-subtag-registry/data/json/registry');
 
 var iso639 = require('./iso639');
 
@@ -134,13 +134,20 @@ function fixupMap(m) {
 }
 
 function shortenIso(m) {
+    var inRegistry = {};
+    for (var i = 0; i < registry.length; i++) {
+        if (registry[i]['Type'] === 'language')
+            inRegistry[registry[i]['Subtag']] = true;
+    }
     for (var ott in m) {
 	if (m.hasOwnProperty(ott)) {
 	    var v = m[ott].iso;
-	    for (var i = 0; i < v.length; i++) {
+	    for (i = 0; i < v.length; i++) {
 		var t = iso639[v[i]];
 		if (t)
 		    v[i] = t;
+                if (!inRegistry[v[i]])
+                    console.error('%s: not in registry (%s)', v[i], ott);
 	    }
 	}
     }
