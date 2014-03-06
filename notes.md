@@ -322,7 +322,7 @@ Given all the circumstances, it seems best to stick to the spec's recommendation
 
 Kui. Confirm **kxu** (Kui (India)).
 
-There's also **kvd** (Kui (Indonesia)), but that is a [unrelated, much
+There's also **kvd** (Kui (Indonesia)), but that is an [unrelated, much
 smaller](http://www.ethnologue.com/language/kxu) (1,900 as opposed to
 916,000 speakers) language, so it is unlikely to be part of the
 intended meaning of Kui.
@@ -361,6 +361,15 @@ Malayalam. It seems preferable to prefer the reformed orthography.
 
 This is the one case where I think it would be worthwhile
 to register a variant subtag.
+
+## MLE
+
+Male. Confirm **mdy** (Male (Ethiopia)).
+
+There's also **mdc** (Male (Papua New Guinea)) but that is an
+[unrelated, much smaller](http://www.ethnologue.com/language/mdc) (970
+as opposed to 95,000 speakers) language, so it is unlikely to be part
+of the intended meaning of Male.
 
 ## MLN
 
@@ -489,6 +498,15 @@ R-Cree. Confirm **atj** (Atikamekw).
 According to the [Languagegeek
 website](http://www.languagegeek.com/algon/cree/atikamekw.html),
 Atikamekw is an r-dialect of the Cree language.
+
+## RIA
+
+Riang. Confirm **ria** (Riang (India)).
+
+There's also **ril** (Riang (Myanmar)), but that is an [unrelated,
+smaller](http://www.ethnologue.com/language/ril) (15,500 vs 77,000
+speakers) language, and thus unlikely to be part of the intended
+meaning of the RIA code.
 
 ## SAY
 
