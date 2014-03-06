@@ -67,7 +67,7 @@ function fixupMap(m) {
     m.rename("HAL", "flm", "cfm"); // Falam Chin also known as Halam; flm retired
     if (false)			   // We remove all of QIN mappings above
 	m.remove("QIN", "flm");
-    m.rename("SIG", "xst", "stv"); // Silt'e; xst retired
+    m.rename("SIG", "xst", "stv").add("SIG", "wle"); // Silt'e; xst retired
     // We're keeping it, but adding a short mapping
     if (false) {
 	m.remove("MOL", "mol"); // Moldavian retired
@@ -121,8 +121,8 @@ function fixupMap(m) {
     m.remove("ZHT", "zho"); // Chinese Traditional
 
     // Wait till we have resolved divergences from HB before adding these.
-    if (false) {
-	m.add("AGW", "awn").add("AGW", "ahg").add("AGW", "xan");
+    if (true) {
+	m.add("AGW", "awn");
 	m.add("BTI", "beb").add("BTI", "bum").add("BTI", "bxp").add("BTI", "eto")
 	    .add("BTI", "ewo").add("BTI", "fan").add("BTI", "mct");
 	m.remove("WCR", "crk").add("YCR", "crk");
@@ -132,10 +132,11 @@ function fixupMap(m) {
 	m.removeAll("KIS").add("KIS", "guz");
 	m.add("LAH", "lbf").add("LAH", "lae"); // Lahuli
 	m.add("PAA", "jpa");
-	m.rename("SXT", "ngo", "sot");
+	m.remove("SXT", "ngo");
 	m.add("SWK", "swc"); // Swahili
 	m.rename("TNE", "enh", "yrk");
     }
+    m.add("NIS", "njz").add("NIS", "tgj");
     return m;
 }
 

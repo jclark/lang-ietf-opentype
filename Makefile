@@ -3,7 +3,7 @@ CURL=curl
 CURLFLAGS=-s
 LANGUAGETAGS_URL=http://www.microsoft.com/typography/otspec/languagetags.htm
 ISO639_2_URL=http://www.loc.gov/standards/iso639-2/ISO-639-2_utf-8.txt
-CLEANFILES=otlangs.js iso639.js ISO-639-2_utf-8.txt map.txt hb-extra.txt hb-map-trim.txt extra-wd5.txt
+CLEANFILES=otlangs.js iso639.js ISO-639-2_utf-8.txt map.txt hb-map-trim.txt hb-map-fixed.txt extra-wd5.txt
 
 map.txt: gen.js otlangs.js iso639.js
 	$(NODE) gen.js >map.tmp
@@ -24,13 +24,17 @@ clean:
 
 extra-wd5.txt: languagetags-wd5.txt otlangs.js
 	$(NODE) genlanguagetags.js \
+	  | sort -k 2 -t '+' \
 	  | join -t '+' -v 2 -1 2 -2 2 - languagetags-wd5.txt \
 	  | cut -d '+' -f 2 >$@
 
 hb-map-trim.txt: hb-map.txt extra-wd5.txt
 	sort -k 2 hb-map.txt | join -v 1 -1 2 - extra-wd5.txt | sort -k 1 >$@
 
-hb-extra.txt: map.txt hb-map-trim.txt
-	join -v 1 hb-map-trim.txt map.txt >$@
+hb-map-fixed.txt: hb-map-trim.txt hb-add.txt hb-macrolang-expand.txt hb-remove.txt
+	(cat hb-add.txt hb-macrolang-expand.txt; join -t @ -v 2 hb-remove.txt hb-map-trim.txt ) | sort -k 1 >$@
 
+diff: FORCE hb-map-fixed.txt map.txt
+	diff -U 0 hb-map-fixed.txt map.txt
 
+FORCE:

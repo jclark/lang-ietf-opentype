@@ -20,7 +20,7 @@ available, so that the result is a valid IETF tag.
 
 ## AGW
 
-Agaw. Add **awn** (Awngi), **xan** (Xamtanga) to **ahg** (Qimant).
+Agaw. Add **awn** (Awngi) to **ahg** (Qimant).
 
 [Wikipedia](http://en.wikipedia.org/wiki/Agaw_languages) says the Agaw
 languages are the Central Cushitic languages and comprise Awngi
@@ -32,7 +32,8 @@ has a *Cushitic, Central* group comprising: Southern (Awngi, awn),
 Northern (Bilen, byn), Eastern (Xamtanga, xan) and Western (Qimant,
 ahg).
 
-However, Bilen has its own code: BIL.
+However, we map **xan** to SEK
+and **byn** is mapped to BIL.
 
 Ethnologue includes alternate names of *Western Agaw* for **ahg**, of
 *Agaw* for **awn**, of *Agawinya* for **xan** and of *North Agaw* for
@@ -375,7 +376,7 @@ of the intended meaning of Male.
 
 Malinke. Confirm **mlq** (Western Maninkan).
 
-Ethnologue says Malinke is an alternate name for mlq.
+Ethnologue says Malinke is an alternate name for **mlq**.
 
 http://www.ethnologue.com/language/mlq
 
@@ -435,8 +436,9 @@ Nisi. Add **njz** (Nyishi) and **tgj* (Tagin) to **dap** (Nishi, India).
 
 **dap** (Nisi, India) was retired and split into **njz** (Nyishi) and
 ****tgj** (Tagin).  **dap** is in the IETF language registry, but
-**deprecated.  **yso** (Nisi, China) is an unrelated, much smaller
-**language.
+**deprecated.
+
+**yso** (Nisi, China) is an unrelated, much smaller language.
 
 ## NOR
 
@@ -551,9 +553,10 @@ Manchu.
 
 ## SIG
 
-Silte Gurage. Rename **xst** to **stv** (Silt'e).
+Silte Gurage. Remove **xst** and add **wle** (Wolane) and **stv** (Silt'e).
 
-**xst** was retired and split into **wle** (Wolane) and **stv** (Silt'e).
+**xst** was retired and split into **wle** (Wolane) and **stv** (Silt'e). **xst** does
+not exist in the IETF language registry, not even as deprecated.
 
 Silt'e is [also known as](https://www.ethnologue.com/language/stv) East Gurage.
 
@@ -570,7 +573,7 @@ Swahili. Add **swh** (Swahili (individual language)) and **swc**
 
 ## SXT
 
-Sutu. Change **ngo** (Ngoni) to **sot** (Southern Sotho).
+Sutu. Remove **ngo** (Ngoni).
 
 There are two possible meanings for Sutu.
 
@@ -588,6 +591,8 @@ Sesotho.  The numerically next LCID is Tsonga, which another South
 African language, and the next is Tswana, which is also a South
 African language. This suggests that the first meaning is the
 originally intended one.
+
+Unfortunately, **sot** is also mapped to SOT (Sotho).
 
 ## TCR
 

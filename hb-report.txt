@@ -21,7 +21,6 @@ wlc CMR Mwali Comorian
 wni CMR Ndzwani Comorian
 zdj CMR Ngazidja Comorian
 caf CRR Southern Carrier
-bxr RBU Russia Buriat
 co COS Corsican
 
 The last is probably missing because it was omitted from the ISO WD; I
@@ -32,6 +31,7 @@ Less obvious but also following the spec, remove the following
 eot BTI Beti (Côte d'Ivoire)
 kvd KUI Kui (Indonesia)
 mdc MLE Male (Papua New Guinea)
+mlq MNK Western Maninkakan
 nco SIB Sibe
 ril RIA Riang (India)
 xom KMO Komo (Sudan)
@@ -40,7 +40,6 @@ yso NIS Nisi (China)
 and also add the following:
 
 sjo SIB Xibe
-fuf FTA Pular
 pro PRO Old Provencal
 rmz ARK Marma
 
@@ -50,7 +49,6 @@ xst SIG (not an IETF tag, was Silt'e in ISO 639-2 before it was retired)
 
 and additions (not in the spec)
 
-swc SWK Congo Swahili
 njz NIS Nyishi
 tgj NIS Tagin
 beb BTI Bebele
@@ -63,7 +61,7 @@ mct BTI Mengisa
 
 /*{"ahg/awn/xan?",	HB_TAG('A','G','W',' ')},*/	/* Agaw */
 
-"ahg", "awn", "xan"
+"ahg", "awn"
 
 /*{"gsw?/gsw-FR?",	HB_TAG('A','L','S',' ')},*/	/* Alsatian */
 
@@ -205,7 +203,7 @@ Leave unmapped
 
 /*{"ngo?",	HB_TAG('S','X','T',' ')},*/	/* Sutu */
 
-"st"
+Leave unmapped
 
 /*{"??",	HB_TAG('T','C','R',' ')},*/	/* TH-Cree */
 
