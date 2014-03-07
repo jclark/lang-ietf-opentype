@@ -1,0 +1,9 @@
+otlangs.js
+iso639.js
+ISO-639-2_utf-8.txt
+*.tmp
+*~
+map.txt
+hb-map-fixed.txt
+hb-map-trim.txt
+extra-wd5.txt

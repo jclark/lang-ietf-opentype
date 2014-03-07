@@ -1,2 +1,3 @@
 Any retired codes in the IETF registry should be additions rather than renamings for backwards compat.
 
+Blacklist azbbreg
