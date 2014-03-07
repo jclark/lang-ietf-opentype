@@ -61,51 +61,12 @@ LangMap.prototype.getEntryTags = function (langSys) {
 // This is before shortening
 
 function fixupMap(m) {
-    // Get rid of long mappings for ATH and QIN
-    m.removeAll("ATH").removeAll("QIN");
-    // Deal with out of date tags
-    m.rename("HAL", "flm", "cfm"); // Falam Chin also known as Halam; flm retired
-    if (false)			   // We remove all of QIN mappings above
-	m.remove("QIN", "flm");
-    m.rename("SIG", "xst", "stv").add("SIG", "wle"); // Silt'e; xst retired
-    // We're keeping it, but adding a short mapping
-    if (false) {
-	m.remove("MOL", "mol"); // Moldavian retired
-    }
-    m.remove("ARK", "mhv");  // mhv retired and not a valid IETF code
+    // Keep these ordered by OpenType tag.
+    m.add("AGW", "awn");
     m.add("ARA", "arb"); // Standard Arabic
-    m.add("SWK", "swh"); // Swahili
-    m.add("ETI", "ekk"); // Standard Estonian
-    m.rename("SNA", "she", "seh"); // Sena
-    m.remove("BHI", "bhi"); // Bhili != Bhilali
-    // Add some missing entries
-    m.add("MOR", "ary"); // Moroccan Arabic
-    m.add("BML", "bai"); // Bamileke (collection)
-    m.add("BBR", "ber"); // Berber (collection)
-    m.add("IJO", "ijo"); // Ijo (collection)
-    m.add("NOR", "nor"); // Norwegian (macrolanguage)
-    m.add("ATH", "ath"); // Athapascan languages (collection)
-    // Todo; prefer Kalmyk, KLM, for xal (Kalmyk); use written Oirat instead
-    m.remove("TOD", "xal").add("TOD", "xwo");
-    // In Ethnologue, there are about 30 Chin languages in the group
-    // Sino-Tibetan/Tibeto-Burman/Sal/Kuki-Chin-Naga/Kuki-Chin
-    // The most precise group for which there is a ISO639-5 code is Tibeto-Burman, thus
-    m.add("QIN", "tbq"); // Tibeto-Burman languages (collection)
-    // Handle cases where same ISO639 tag is mapped to multiple OT tags,
-    // by removing all but one of the mappings.
-    m.remove("MAL", "mal"); // Malayalam Traditional Orthography; prefer reformed orthography, MLR
-    m.remove("PGR", "ell"); // Polytonic Greek; prefer Greek, ELL, for ell
-    m.remove("IRT", "gle"); // Irish Traditional; prefer Irish, IRI, for gle
-    m.remove("KGE", "kat"); // Khutsuri Georgian; prefer Georgia, KAT, for kat
-    m.remove("BAL", "krc"); // Balkar; prefer Karachay, KAR, for Karachay-Balkar
-    // Khanty
-    m.remove("KHS", "kca"); // Khanty-Shurishkar; prefer Khanty-Kazim, KHK, for kca (Khanty)
-    m.remove("KHV", "kca"); // Khanty-Vakhi; prefer Khanty-Kazim, KHK, for kca (Khanty)
-    // Athapaskan
-    m.remove("SAY", "chp"); // Sayisi; prefer Chipewyan, CHP, for chp (Chipewyan)
-    m.remove("LCR", "crm"); // L-Cree; prefer Moose Cree, MCR, for crm (Moose Cree)
-    m.remove("NHC", "csw"); // Norway House Cree; prefer N-Cree, NCR, for csw (Swampy Cree)
-    m.remove("TCR", "cwd"); // TH-Cree; prefer Woods Cree, DCR, for cwd (Woods Cree)
+    m.remove("ARK", "mhv");  // mhv retired and not a valid IETF code
+    // Get rid of long mappings for ATH
+    m.removeAll("ATH");
     // We remove all ATH mappings above
     if (false) {
 	m.remove("ATH", "chp"); // Athapaskan; prefer Chipewyan, CHP, for chp (Chipewyan)
@@ -114,29 +75,61 @@ function fixupMap(m) {
 	m.remove("ATH", "xsl"); // Athapaskan; prefer South Slavey, SSL, for xsl (South Slavey)
 	m.remove("ATH", "scs"); // Athapaskan; prefer Slavey, SLA, for scs (North Slavey)
     }
+    m.add("ATH", "ath"); // Athapascan languages (collection)
+    m.remove("BAL", "krc"); // Balkar; prefer Karachay, KAR, for Karachay-Balkar
+    m.add("BBR", "ber"); // Berber (collection)
+    m.remove("BHI", "bhi"); // Bhili != Bhilali
+    m.add("BML", "bai"); // Bamileke (collection)
+    m.add("BTI", "beb").add("BTI", "bum").add("BTI", "bxp").add("BTI", "eto")
+	.add("BTI", "ewo").add("BTI", "fan").add("BTI", "mct");
+    m.add("ETI", "ekk"); // Standard Estonian
+    m.add("FAN", "gcf");
+    m.remove("FNE", "enf");
+    m.rename("HAL", "flm", "cfm"); // Falam Chin also known as Halam; flm retired
+    m.add("IJO", "ijo"); // Ijo (collection)
+    m.remove("IRT", "gle"); // Irish Traditional; prefer Irish, IRI, for gle
+    m.rename("KEB", "ktb", "alw");
+    m.remove("KGE", "kat"); // Khutsuri Georgian; prefer Georgia, KAT, for kat
+    m.removeAll("KIS").add("KIS", "guz");
+    // Khanty
+    m.remove("KHS", "kca"); // Khanty-Shurishkar; prefer Khanty-Kazim, KHK, for kca (Khanty)
+    m.remove("KHV", "kca"); // Khanty-Vakhi; prefer Khanty-Kazim, KHK, for kca (Khanty)
+    m.add("LAH", "lbf").add("LAH", "lae"); // Lahuli
+    m.remove("LCR", "crm"); // L-Cree; prefer Moose Cree, MCR, for crm (Moose Cree)
+    m.remove("MAL", "mal"); // Malayalam Traditional Orthography; prefer reformed orthography, MLR
+    // mol is out of date: we're keeping it, but adding a short mapping
+    if (false) {
+	m.remove("MOL", "mol"); // Moldavian retired
+    }
+    m.add("MOR", "ary"); // Moroccan Arabic
+    m.remove("NHC", "csw"); // Norway House Cree; prefer N-Cree, NCR, for csw (Swampy Cree)
+    m.add("NIS", "njz").add("NIS", "tgj");
+    m.add("NOR", "nor"); // Norwegian (macrolanguage)
+    m.add("PAA", "jpa");
+    m.remove("PGR", "ell"); // Polytonic Greek; prefer Greek, ELL, for ell
+    // Get rid of long mappings for QIN
+    m.removeAll("QIN");
+    if (false)			   // We remove all of QIN mappings above
+	m.remove("QIN", "flm");
+    // In Ethnologue, there are about 30 Chin languages in the group
+    // Sino-Tibetan/Tibeto-Burman/Sal/Kuki-Chin-Naga/Kuki-Chin
+    // The most precise group for which there is a ISO639-5 code is Tibeto-Burman, thus
+    m.add("QIN", "tbq"); // Tibeto-Burman languages (collection)
+    m.remove("SAY", "chp"); // Sayisi; prefer Chipewyan, CHP, for chp (Chipewyan)
+    m.rename("SIG", "xst", "stv").add("SIG", "wle"); // Silt'e; xst retired
+    m.rename("SNA", "she", "seh"); // Sena
+    m.add("SWK", "swh").add("SWK", "swc"); // Swahili
+    m.remove("SXT", "ngo");
+    m.remove("TCR", "cwd"); // TH-Cree; prefer Woods Cree, DCR, for cwd (Woods Cree)
+    m.rename("TNE", "enh", "yrk");
+    // Todo; prefer Kalmyk, KLM, for xal (Kalmyk); use written Oirat instead
+    m.remove("TOD", "xal").add("TOD", "xwo");
+    m.remove("WCR", "crk").add("YCR", "crk");
     // Handle Chinese specially
     m.remove("ZHH", "zho"); // Chinese Hong Kong SAR
     m.remove("ZHP", "zho"); // Chinese Phonetic
     m.remove("ZHS", "zho"); // Chinese Simplified
     m.remove("ZHT", "zho"); // Chinese Traditional
-
-    // Wait till we have resolved divergences from HB before adding these.
-    if (true) {
-	m.add("AGW", "awn");
-	m.add("BTI", "beb").add("BTI", "bum").add("BTI", "bxp").add("BTI", "eto")
-	    .add("BTI", "ewo").add("BTI", "fan").add("BTI", "mct");
-	m.remove("WCR", "crk").add("YCR", "crk");
-	m.add("FAN", "gcf");
-	m.remove("FNE", "enf");
-	m.rename("KEB", "ktb", "alw");
-	m.removeAll("KIS").add("KIS", "guz");
-	m.add("LAH", "lbf").add("LAH", "lae"); // Lahuli
-	m.add("PAA", "jpa");
-	m.remove("SXT", "ngo");
-	m.add("SWK", "swc"); // Swahili
-	m.rename("TNE", "enh", "yrk");
-    }
-    m.add("NIS", "njz").add("NIS", "tgj");
     return m;
 }
 
