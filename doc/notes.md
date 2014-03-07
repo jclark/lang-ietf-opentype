@@ -75,7 +75,7 @@ Arakanese](http://en.wikipedia.org/wiki/Arakanese_language).
 
 ## ATH
 
-Athapascan. Replace by **ath** (Athpascan languages).
+Athapascan. Replace by **ath** (Athapascan languages).
 
 This is a language collection. Several languages in the collection
 have their own codes.  The current spec has a long list of all the
@@ -173,7 +173,7 @@ Alternate names of [Pular](http://www.ethnologue.com/language/fuf) are
 
 ## GAR
 
-Garshuni. Add **ar-Syrc** (Arabic/Syriac script).
+Garshuni. Add **ar-Syrc** (Arabic, Syriac script) and **arb-Syrc** (Standard Arabic, Syriac script).
 
 [Garshuni](http://en.wikipedia.org/wiki/Garshuni) are Arabic writings in the Syriac script.
 
@@ -638,7 +638,7 @@ a million speakers. The next biggest, Tonga of Mozambique, is a different langua
 
 ## TOD
 
-Todo. Qualify as **xal-Mong** (Kalmyk-Oirat/Mongolian Script). Add **xwo* (Written Oirat).
+Todo. Qualify as **xal-Mong** (Kalmyk-Oirat/Mongolian Script). Add **xwo** (Written Oirat).
 
 The Todo script (sometimes called [Clear
 Script](http://en.wikipedia.org/wiki/Clear_script)) is a derivative
