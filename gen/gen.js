@@ -1,5 +1,11 @@
 "use strict";
 
+var argv = require('optimist')
+     .usage('Usage: $0 [-j]')
+     .boolean('j').alias('j', 'json').describe('Generate output in JSON format')
+     .boolean('m').alias('m', 'macrolang-expand').describe('Generate mappings for components of mapped macrolanguages')
+     .argv;
+
 var registry = require('language-subtag-registry/data/json/registry');
 
 var iso639 = require('./iso639');
@@ -58,8 +64,6 @@ var qualifyRules = {
         // otherwise, use ZHS.
     ]
 };
-
-var optionReportMacrolangExpansion = true;
 
 // Moldavian has been retired, so the shortening isn't in the official map,
 // but we keep it since we still have a MOL entry
@@ -286,7 +290,7 @@ function expandMacrolang(m) {
 	else
             m[added.component] = added.opentype;
     }
-    if (optionReportMacrolangExpansion) {
+    if (argv.m) {
         addedList.sort(function (x, y) {
             if (x.opentype < y.opentype)
                 return -1;
@@ -313,7 +317,7 @@ function expandMacrolang(m) {
     return m;
 }
 
-function printMap(m) {
+function textOutput(m) {
     var tags = Object.keys(m).sort();
     for (var i = 0; i < tags.length; i++) {
 	var result = m[tags[i]];
@@ -323,4 +327,10 @@ function printMap(m) {
     }
 }
 
-printMap(expandMacrolang(invert(shortenIso(fixupMap(buildLangsMap(require('./otlangs')))))));
+function jsonOutput(m) {
+    console.log('%s', JSON.stringify(m, undefined, 2));
+}
+
+var output = argv.json ? jsonOutput : textOutput;
+
+output(expandMacrolang(invert(shortenIso(fixupMap(buildLangsMap(require('./otlangs')))))));

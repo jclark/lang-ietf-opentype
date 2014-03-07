@@ -9,6 +9,12 @@ map.txt: gen.js otlangs.js iso639.js
 	$(NODE) gen.js >map.tmp
 	mv map.tmp $@
 
+json: ../lib/map.json
+
+../lib/map.json: gen.js otlangs.js iso639.js
+	$(NODE) gen.js -j >map.json.tmp
+	mv map.json.tmp $@
+
 otlangs.js: languagetags.sed
 	$(CURL) $(CURLFLAGS) $(LANGUAGETAGS_URL) | sed -f languagetags.sed >$@
 
