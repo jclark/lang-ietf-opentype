@@ -233,8 +233,8 @@ Leave unmapped
 
 "ii"
 
-Would also be desirable to map anything in the Yi script (ie anything
-with a script code of Yiii) to YIM.
+It would also be desirable to map otherwise unmapped languages in the
+Yi script (ie with with a script code of Yiii) to YIM.
 
 /*{"??",	HB_TAG('Z','H','P',' ')},*/	/* Chinese Phonetic */
 
