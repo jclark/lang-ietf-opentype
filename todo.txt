@@ -1,3 +1,4 @@
 Any retired codes in the IETF registry should be additions rather than renamings for backwards compat.
-
-Blacklist azbbreg
+Document handling of Chinese language tags.
+More test cases.
+Handle "fonipa" variant.
