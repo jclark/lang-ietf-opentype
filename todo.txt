@@ -2,3 +2,5 @@ Any retired codes in the IETF registry should be additions rather than renamings
 Document handling of Chinese language tags.
 More test cases.
 Handle "fonipa" variant.
+Complete package.json.
+Add README.md
