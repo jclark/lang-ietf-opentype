@@ -525,6 +525,7 @@ yo YBA
 yso NIS
 za ZHA
 zea ZEA
+zh ZHS
 zne ZND
 zu ZUL
 zum LRC

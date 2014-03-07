@@ -177,3 +177,17 @@ als SQI
 swc SWK
 cld SYR
 fat TWI
+cdo ZHS
+cjy ZHS
+cmn ZHS
+cpx ZHS
+czh ZHS
+czo ZHS
+gan ZHS
+hak ZHS
+hsn ZHS
+lzh ZHS
+mnp ZHS
+nan ZHS
+wuu ZHS
+yue ZHS

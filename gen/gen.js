@@ -4,7 +4,62 @@ var registry = require('language-subtag-registry/data/json/registry');
 
 var iso639 = require('./iso639');
 
-var optionReportMacrolangExpansion = false;
+var expectMissing = [
+    "APPH", // Phonetic transcription - Americanist conventions
+    "BAL",  // Balkar
+    "BCR",  // Bible Cree
+    "FNE",  // Forest Nenets (conflict with TNE for yrk)
+    "IPPH", // Phonetic transcription - IPA conventions (maps to variant fonipa, but we deal with this separately)
+    "KHS",  // Khanty-Shurishkar (conflict with KHK for kca)
+    "KHV",  // Khanty-Vakhi (conflict with KHK for kca)
+    "LCR",  // L-Cree (conflict with MCR for crm)
+    "MAL",  // Malayalam Traditional (conflict with MLR for mal)
+    "NGR",  // Nagari
+    "NHC",  // Norway House Cree
+    "SAY",  // Sayisi (conflict with CHP for chp)
+    "SXT",  // Sutu
+    "TCR",  // TH-Cree (conflict with DCR for cwd)
+    "WCR",  // West-Cree
+    "YIC"   // Yi Classic 
+];
+
+var expectDeprecated = [
+    "btb",
+    "mo",
+    "dap"
+];
+
+var qualifyRules = {
+    // Garshuni is Arabic with the Syriac script
+    ar: ["syrc", "GAR"], // Arabic macrolanguage
+    arb: ["syrc", "GAR"], // Standard Arabic
+    // Polytonic Greek
+    el: ["polyton", "PGR"],
+    // Irish Traditional is Irish using the Gaelic variant of the Irish script
+    ga: ["latg", "IRT"],
+    // Khutsiri Georgian is Georgian with the Khutsuri script
+    ka: ["geok", "KGE"],
+    // Todo is Kalmyk-Oirat with the Mongolian script
+    xal: ["mong", "TODO"],
+    // Chinese
+    zh: [
+        // If the script is Simplified Chinese, use ZHS;
+        "hans", "ZHS",
+        // otherwise, if the script is Latin, use ZHP;
+        "latn", "ZHP",
+        // otherwise, if the region is Hong Kong, use ZHH;
+        "hk", "ZHH",
+        // otherwise, if the script is Traditional Chinese, use ZHT;
+        "hant", "ZHT",
+        // otherwise, if the region is Macau, use ZHT;
+        "mo", "ZHT",
+        // otherwise, if the region is Taiwan, use ZHT;
+        "tw", "ZHT"
+        // otherwise, use ZHS.
+    ]
+};
+
+var optionReportMacrolangExpansion = true;
 
 // Moldavian has been retired, so the shortening isn't in the official map,
 // but we keep it since we still have a MOL entry
@@ -61,7 +116,7 @@ LangMap.prototype.getEntryTags = function (langSys) {
 // This is before shortening
 
 function fixupMap(m) {
-    // Keep these ordered by OpenType tag.
+    // Keep these sorted by OpenType tag.
     m.add("AGW", "awn");
     m.add("ARA", "arb"); // Standard Arabic
     m.remove("ARK", "mhv");  // mhv retired and not a valid IETF code
@@ -122,13 +177,14 @@ function fixupMap(m) {
     m.remove("SXT", "ngo");
     m.remove("TCR", "cwd"); // TH-Cree; prefer Woods Cree, DCR, for cwd (Woods Cree)
     m.rename("TNE", "enh", "yrk");
-    // Todo; prefer Kalmyk, KLM, for xal (Kalmyk); use written Oirat instead
-    m.remove("TOD", "xal").add("TOD", "xwo");
+    // One interpretation of Todo is Written Oirat
+    m.add("TOD", "xwo");
+    // qualifyRules handles this
+    m.remove("TOD", "xal");
     m.remove("WCR", "crk").add("YCR", "crk");
-    // Handle Chinese specially
+    // Handled by qualifyRules; default is ZHS (Simplified Chinese)
     m.remove("ZHH", "zho"); // Chinese Hong Kong SAR
     m.remove("ZHP", "zho"); // Chinese Phonetic
-    m.remove("ZHS", "zho"); // Chinese Simplified
     m.remove("ZHT", "zho"); // Chinese Traditional
     return m;
 }
@@ -152,7 +208,8 @@ function shortenIso(m) {
 		    v[i] = t;
                 if (!inRegistry[v[i]])
                     console.error('%s: not in registry (%s)', v[i], ott);
-                else if (inRegistry[v[i]] === 'deprecated')
+                else if (inRegistry[v[i]] === 'deprecated'
+			 && expectDeprecated.indexOf(v[i]) < 0)
                     console.error('%s: deprecated by IETF registry', v[i]);
 	    }
 	}
@@ -161,13 +218,13 @@ function shortenIso(m) {
 }
 
 function invert(m) {
-    var missing = "";
+    var missing = {}
     var inv = {};
     for (var ott in m) {
 	if (m.hasOwnProperty(ott)) {
 	    var v = m[ott].iso;
 	    if (v.length === 0)
-		missing += " " + ott;
+		missing[ott] = true;
 	    for (var i = 0; i < v.length; i++) {
 		if (inv[v[i]] !== undefined)
 		    console.error('duplicate for %s', v[i]);
@@ -175,8 +232,20 @@ function invert(m) {
 	    }
 	}
     }
-    if (missing.length > 0)
-	console.error("Missing mappings for:" + missing);
+    var i;
+    for (i = 0; i < expectMissing.length; i++)
+	delete missing[expectMissing[i]];
+    for (var t in qualifyRules) {
+	var rules = qualifyRules[t];
+	if (inv[t] === undefined)
+	    console.error('no mapping for %s', t);
+	else
+	    inv[t] = [inv[t]].concat(qualifyRules[t]);
+	for (i = 1; i < rules.length; i += 2)
+	    delete missing[rules[i]];
+    }
+    for (ott in missing) 
+	console.error("Missing mapping for %s", ott);
     return inv;
 }
 
@@ -199,14 +268,23 @@ function expandMacrolang(m) {
         if (components) {
             for (i = 0; i < components.length; i++) {
                 var component = components[i];
-                if (!m[component])
-                    addedList.push({ macrolang: tag, component: component, opentype: m[tag]});
+                if (!m[component]) {
+		    var ot = m[tag];
+		    if (typeof(ot) === 'string')
+			addedList.push({ macrolang: tag, component: component, opentype: ot });
+		    else
+			addedList.push({ macrolang: tag, component: component, opentype: ot[0],
+				         rules: ot.slice(1) });
+		}
             }
         }
     }
     for (i = 0; i < addedList.length; i++) {
         var added = addedList[i];
-        m[added.component] = added.opentype;
+	if (added.macrolang === 'zh')
+	    m[added.component] = [added.opentype].concat(added.rules);
+	else
+            m[added.component] = added.opentype;
     }
     if (optionReportMacrolangExpansion) {
         addedList.sort(function (x, y) {
@@ -237,8 +315,12 @@ function expandMacrolang(m) {
 
 function printMap(m) {
     var tags = Object.keys(m).sort();
-    for (var i = 0; i < tags.length; i++)
-	console.log('%s %s', tags[i], m[tags[i]]);
+    for (var i = 0; i < tags.length; i++) {
+	var result = m[tags[i]];
+	if (typeof(result) !== 'string')
+	    result = result.join(' ');
+	console.log('%s %s', tags[i], result);
+    }
 }
 
 printMap(expandMacrolang(invert(shortenIso(fixupMap(buildLangsMap(require('./otlangs')))))));
