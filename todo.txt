@@ -1,5 +1,6 @@
 Any retired codes in the IETF registry should be additions rather than renamings for backwards compat.
 Document handling of Chinese language tags.
 More test cases.
-Add README.md
-Handle HarfBuzz's x-hbot extension
+Add README.md.
+Handle HarfBuzz's x-hbot private use extension.
+Handle grandfathered IETF language tags.
