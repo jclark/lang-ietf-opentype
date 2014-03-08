@@ -36,8 +36,12 @@ var expectDeprecated = [
 ];
 
 var qualifyRules = {
-    // Garshuni is Arabic with the Syriac script
-    ar: ["syrc", "GAR"], // Arabic macrolanguage
+    ar: [ // Arabic macrolanguage
+        // Support ary as an extlang ie ar-ary
+        "ary", "MOR",
+        // Garshuni is Arabic with the Syriac script
+        "syrc", "GAR"
+    ],
     arb: ["syrc", "GAR"], // Standard Arabic
     // Polytonic Greek
     el: ["polyton", "PGR"],
