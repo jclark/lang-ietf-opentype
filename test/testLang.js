@@ -39,7 +39,19 @@ var map =
     // Greek
     "el": "ELL",
     "el-polyton": "PGR",
-    "el-Grek-GR-polyton-x-wow": "PGR"
+    "el-Grek-GR-polyton-x-wow": "PGR",
+    // Cree
+    "cwd": "DCR",
+    // Others
+    "ijc": "IJO",
+    // IPA
+    "und-fonipa": "IPPH",
+    "en-fonipa": "IPPH",
+    "zh-fonipa": "IPPH",
+    "ary-fonipa": "IPPH",
+    "en-US-fonipa": "IPPH",
+    "ijc-fonipa": "IPPH",
+    "und": undefined
 };
 
 var ietfToOpenType = require('../lib/lang').ietfToOpenType;

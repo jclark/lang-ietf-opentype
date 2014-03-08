@@ -15,7 +15,7 @@ var expectMissing = [
     "BAL",  // Balkar
     "BCR",  // Bible Cree
     "FNE",  // Forest Nenets (conflict with TNE for yrk)
-    "IPPH", // Phonetic transcription - IPA conventions (maps to variant fonipa, but we deal with this separately)
+    "IPPH", // Phonetic transcription - IPA conventions (maps to variant fonipa; handled in lang.js)
     "KHS",  // Khanty-Shurishkar (conflict with KHK for kca)
     "KHV",  // Khanty-Vakhi (conflict with KHK for kca)
     "LCR",  // L-Cree (conflict with MCR for crm)
