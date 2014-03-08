@@ -4,3 +4,4 @@ More test cases.
 Handle "fonipa" variant.
 Complete package.json.
 Add README.md
+Handle HarfBuzz's x-hbot extension
