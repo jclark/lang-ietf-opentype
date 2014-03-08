@@ -1,7 +1,7 @@
 "use strict";
 
-var argv = require('optimist')
-     .usage('Usage: $0 [-j]')
+var argv = require('yargs')
+     .usage('Usage: $0 [-j] [-m]')
      .boolean('j').alias('j', 'json').describe('Generate output in JSON format')
      .boolean('m').alias('m', 'macrolang-expand').describe('Generate mappings for components of mapped macrolanguages')
      .argv;
@@ -226,7 +226,7 @@ function shortenIso(m) {
 }
 
 function invert(m) {
-    var missing = {}
+    var missing = {};
     var inv = {};
     for (var ott in m) {
 	if (m.hasOwnProperty(ott)) {
