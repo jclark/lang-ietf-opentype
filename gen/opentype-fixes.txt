@@ -1,29 +1,26 @@
 
 Suggested changes to ISO 639 ID column
 
-AGW Add awn, xan
-ARA Add arb
+AGW Add awn, byn, xan
 BTI Add beb, bum, bxp, eto, ewo, fan, mct
-ETI Add ekk
 FAN Add gcf
 FNE Change enf to yrk
-GAR Add ara
-HAL Change flm to cfm
-KEB Change ktb to alw
+GAR Add ara, arb
+HAL Add cfm
+KEB Add alw
 KIS Change kqs, kss to guz
 LAH Add lbf, lae
 MOR Add ary
 NIS Add njz, tgj
 NOR Add nor
 PAA Add jpa
-SIG Change xst to stv
+SIG Add stv, wle
 SNA Change she to seh
-SWK Add swh
 SXT Change ngo to sot
 TOD Add xwo
 TNE Change enh to yrk
 YCR Add crk
-WCR Remove crk
+WCR Add cwd
 
 Use ISO 639-5 tags where appropriate:
 
@@ -39,14 +36,14 @@ Name of ZHH has changed from "Chinese, Hong Kong SAR" to "Chinese".
 
 Macrolangs
 
-ARA (ara): aao, abh, abv, acm, acq, acw, acx, acy, adf, aeb, aec, afb, ajp, apc, apd, arq, ars, arz, auz, avl, ayh, ayl, ayn, ayp, bbz, pga, shu, ssh
+ARA (ara): aao, abh, abv, acm, acq, acw, acx, acy, adf, aeb, aec, afb, ajp, apc, apd, arb, arq, ars, ary, arz, auz, avl, ayh, ayl, ayn, ayp, bbz, pga, shu, ssh
 AYM (aym): ayc, ayr
 AZE (aza): azb, azj
 BIK (bik): bcl, bln, bto, cts, fbl, lbl, rbl, ubl
 BLI (bal): bcc, bgn, bgp
 DGR (doi): dgo, xnr
 DNK (din): dib, dik, dip, diw, dks
-ETI (est): vro
+ETI (est): ekk, vro
 FAR (per): pes
 FUL (ful): ffm, fub, fuc, fue, fuh, fui, fuq, fuv
 GON (gon): ggo, gno
@@ -73,8 +70,8 @@ PAS (pus): pbt, pbu, pst
 RAJ (raj): bgq, gda, gju, mup
 ROY (rom): rmc, rmf, rml, rmn, rmo, rmw, rmy
 SQI (alb): aae, aat, aln, als
+SWK (swa): swc, swh
 SYR (syr): cld
 TWI (aka): twi, fat
 UZB (uzb): uzn, uzs
-UZB (uz): uzn, uzs
-ZHS (zh): cdo, cjy, cmn, cpx, czh, czo, gan, hak, hsn, lzh, mnp, nan, wuu, yue
+ZHS (zho): cdo, cjy, cmn, cpx, czh, czo, gan, hak, hsn, lzh, mnp, nan, wuu, yue
