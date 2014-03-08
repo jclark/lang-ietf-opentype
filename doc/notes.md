@@ -219,7 +219,12 @@ script](http://en.wikipedia.org/wiki/Gaelic_type).
 
 Karachay. Confirm as **krc** (Karachay-Balkar)
 
-Prefer KRC to BAL for **krc** on the basis of the tag name.
+There are two dialects of Karachay-Balkar: Karachay-Baksan-Chegem and Balkar.
+Presumably Karachay refers to the former, and Balkar to the latter.
+The modern [Karachay-Balkar written language](http://en.wikipedia.org/wiki/Karachay-Balkar_language)
+is based on the Karachay-Baksan-Chegem dialect,
+which suggests it is better to map **krc** to KAR rather than BAL.
+This is also consistent with the tag name.
 
 ## KEB
 
