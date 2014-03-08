@@ -3,3 +3,4 @@ More test cases.
 Add README.md.
 Handle HarfBuzz's x-hbot private use extension.
 Handle grandfathered IETF language tags.
+Prettify opentype-fixes.
