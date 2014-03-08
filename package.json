@@ -20,5 +20,12 @@
     "nodeunit": "^0.8.6",
     "yargs": "^1.2.1"
   },
+  "keywords": [
+    "language",
+    "bcp47",
+    "rfc5646",
+    "opentype",
+    "truetype"
+  ],
   "license": "MIT"
 }
