@@ -1,6 +1,12 @@
 {
   "name": "lang-ietf-opentype",
+  "description": "Map between IETF language tags and OpenType language system tags",
   "version": "0.0.1",
+  "main": "lib/lang.js",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/jclark/lang-ietf-opentype.git"
+  },
   "author": {
     "name": "James Clark",
     "email": "jjc@jclark.com",
