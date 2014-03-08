@@ -9,6 +9,12 @@ map.txt: gen.js otlangs.js iso639.js
 	$(NODE) gen.js >map.tmp
 	mv map.tmp $@
 
+diff: map.ok.txt map.txt
+	diff -U 0 map.ok.txt map.txt
+
+ok:
+	cp map.txt map.ok.txt
+
 json: ../lib/map.json
 
 ../lib/map.json: gen.js otlangs.js iso639.js
@@ -40,7 +46,6 @@ hb-map-trim.txt: hb-map.txt extra-wd5.txt
 hb-map-fixed.txt: hb-map-trim.txt hb-add.txt hb-macrolang-expand.txt hb-remove.txt
 	(cat hb-add.txt hb-macrolang-expand.txt; join -t @ -v 2 hb-remove.txt hb-map-trim.txt ) | sort -k 1 >$@
 
-diff: FORCE hb-map-fixed.txt map.txt
+hb-diff: hb-map-fixed.txt map.txt
 	cut -d ' ' -f '1,2' map.txt | diff -U 0 hb-map-fixed.txt -
 
-FORCE:
