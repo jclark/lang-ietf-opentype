@@ -11,7 +11,7 @@ tags into OpenType language system tags.
 
 This project is designed to help with this problem, by providing
 
-* data, in JSON format, declaratively describing the conversion and
+* [data](lib/map.json), in JSON format, declaratively describing the conversion and
 * a node.js module that uses this data to do the conversion.
 
 The OpenType specification associates a number of ISO 639-2 or ISO 639-3 three-letter tags
@@ -26,6 +26,7 @@ be resolved by finding an appropriate script, region or variant subtag to add to
 * sometimes the associated ISO 639 tags are inconsistent with the name of the OpenType language system.
 
 There are extensive [notes](doc/notes.md) describing the issues for each OpenType language system tag.
+The [gen](gen/) directory contains code based on these notes to generate the JSON data file.
 
 ## Data
 
