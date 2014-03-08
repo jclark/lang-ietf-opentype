@@ -153,7 +153,7 @@ French Antillean. Add **gcf** (Guadeloupean Creole French) to **acf**
 The French-associated islands in the Antilles are in the Lesser Antilles.
 
 [Wikipedia](http://en.wikipedia.org/wiki/Antillean_Creole_French) also
-includes **gcf* in Antillean Creole French. It also mentions **scf**
+includes **gcf** in Antillean Creole French. It also mentions **scf**
 (San Miguel Creole French) but it is nearly extinct and spoken in Panama
 (which is not part of the Antilles). Ethnologue also mentions **gcr**
 (Guianese Creole French).
@@ -185,7 +185,7 @@ Halam. Rename **flm** to **cfm** (Falam Chin).
 
 **flm** (Falam Chin) was
 [retired](http://www.silinternational.net/iso639-3/documentation.asp?id=flm)
-and split into **rnl** (Ranglong) and **cfm**.
+and split into **rnl** (Ranglong) and **cfm**. **flm** does not exist in the IETF registry.
 
 According to [Wikipedia](http://en.wikipedia.org/wiki/Halam_tribe), the
 Ranglong are a sub-group of the Halam, but the Ranglong language doesn't appear to be
@@ -703,22 +703,28 @@ in a very unclear way.
 
 ## ZHH
 
-Chinese HongKong-SAR. *todo*
+Chinese HongKong-SAR. Qualify as **zh-HK**.
+
+See separate document on [Chinese language tags](chinese.md).
 
 ## ZHP
 
 Chinese Phonetic. Qualify as **zh-Latn**.
 
 The more precise tag would be **zh-Latn-pinyin**, but there isn't any better match for
-**zh-Latn**. See:
+**zh-Latn**. There was [some](http://lists.w3.org/Archives/Public/www-style/2009Oct/0327.html)
+[discussion](http://lists.w3.org/Archives/Public/www-style/2009Oct/0346.html) of this on www-style.
 
-http://lists.w3.org/Archives/Public/www-style/2009Oct/0327.html
-http://lists.w3.org/Archives/Public/www-style/2009Oct/0346.html
+See separate document on [Chinese language tags](chinese.md).
 
 ## ZHS
 
-Chinese Simplified. *todo*
+Chinese Simplified. Qualify as **zh-Hans**.
+
+See separate document on [Chinese language tags](chinese.md).
 
 ## ZHT
 
-Chinese Traditional. *todo*
+Chinese Traditional. Qualify as **zh-Hant**.
+
+See separate document on [Chinese language tags](chinese.md).
