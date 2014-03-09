@@ -426,6 +426,9 @@ Nagari. Confirm *unmapped*.
 [Nagari](http://en.wikipedia.org/wiki/N%C4%81gar%C4%AB_script)
 is an ancestor of the Devanagari script.
 
+[ISO 15924](http://www.unicode.org/iso15924/iso15924-codes.html)
+describes the `Deva` script tag as *Devanagari (Nagari)*.
+
 ## NHC
 
 Norway House Cree. Confirm *unmapped*.
